@@ -66,7 +66,7 @@ function Cell({ value, isMain }: { value: CellVal; isMain?: boolean }) {
           transition={{ type: 'spring', stiffness: 400, damping: 14 }}
           className={`w-7 h-7 rounded-full flex items-center justify-center shadow-sm ${
             isMain
-              ? 'bg-[#4F46E5] shadow-[#4F46E5]/30'
+              ? 'bg-brand shadow-brand/30'
               : 'bg-emerald-500/15 border border-emerald-500/25'
           }`}
         >
@@ -94,7 +94,7 @@ function Cell({ value, isMain }: { value: CellVal; isMain?: boolean }) {
 }
 
 const trustItems = [
-  { icon: <DriverVerificationIcon />, title: 'Driver Verification', desc: '6-layer KYC — Aadhaar, DL, RC, Insurance, PUC, Liveness', color: 'text-[#4F46E5]', bg: 'bg-indigo-50' },
+  { icon: <DriverVerificationIcon />, title: 'Driver Verification', desc: '6-layer KYC — Aadhaar, DL, RC, Insurance, PUC, Liveness', color: 'text-brand', bg: 'bg-indigo-50' },
   { icon: <VehicleVerificationIcon />, title: 'Vehicle Verification', desc: 'RC, Insurance, PUC auto-verified via DigiLocker APIs', color: 'text-teal-600', bg: 'bg-teal-50' },
   { icon: <IdentityVerificationIcon />, title: 'Identity Verification', desc: 'Aadhaar-based eKYC — deepest identity check in Indian carpooling', color: 'text-cyan-600', bg: 'bg-cyan-50' },
   { icon: <EmergencySafetyIcon />, title: 'Emergency Safety Systems', desc: 'SOS, guardian mode, route deviation detection, 24/7 monitoring', color: 'text-rose-600', bg: 'bg-rose-50' },
@@ -131,10 +131,10 @@ const whyCards = [
     desc: 'Improve vehicle utilisation and reduce empty-seat travel — fewer cars on the road, smarter cities.',
     stat: '400M+',
     statLabel: 'commuters served',
-    color: 'text-[#4F46E5]',
+    color: 'text-brand',
     bg: 'bg-indigo-50',
     border: 'border-indigo-100',
-    highlight: 'from-[#4F46E5] to-[#06B6D4]',
+    highlight: 'from-brand to-brand-cyan',
   },
 ];
 
@@ -149,7 +149,7 @@ export function ComparisonMatrix() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-sm font-bold text-[#4F46E5] uppercase tracking-widest mb-4"
+            className="text-sm font-bold text-brand uppercase tracking-widest mb-4"
           >
             Why {COMPANY.name}
           </motion.p>
@@ -161,7 +161,7 @@ export function ComparisonMatrix() {
             className="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight leading-[1.06] mb-5"
           >
             The missing layer in mobility:<br />
-            <span className="text-[#4F46E5]">Trust.</span>
+            <span className="text-brand">Trust.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -197,13 +197,13 @@ export function ComparisonMatrix() {
                   <th className="px-6 py-5 text-left" />
 
                   {/* Company — premium column */}
-                  <th className="relative px-4 py-5 text-center bg-gradient-to-b from-[#4F46E5]/[0.07] to-[#4F46E5]/[0.02]">
-                    <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-[#4F46E5] to-[#06B6D4]" />
+                  <th className="relative px-4 py-5 text-center bg-gradient-to-b from-brand/[0.07] to-brand/[0.02]">
+                    <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-brand to-brand-cyan" />
                     <div className="flex flex-col items-center gap-1.5">
-                      <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#4F46E5] to-[#06B6D4] flex items-center justify-center shadow-lg shadow-[#4F46E5]/30">
+                      <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand to-brand-cyan flex items-center justify-center shadow-lg shadow-brand/30">
                         <span className="text-white font-black text-sm">{COMPANY.name[0]}</span>
                       </div>
-                      <p className="font-black text-[#4F46E5] text-sm">{COMPANY.name}</p>
+                      <p className="font-black text-brand text-sm">{COMPANY.name}</p>
                     </div>
                   </th>
 
@@ -237,7 +237,7 @@ export function ComparisonMatrix() {
                           <p className="text-sm font-semibold text-gray-800 leading-tight">{row.feature}</p>
                           <p className="text-[11px] text-gray-400 mt-0.5">{row.sub}</p>
                         </td>
-                        <td className="px-4 py-3.5 text-center bg-gradient-to-b from-[#4F46E5]/[0.05] to-[#4F46E5]/[0.02] border-l border-[#4F46E5]/10">
+                        <td className="px-4 py-3.5 text-center bg-gradient-to-b from-brand/[0.05] to-brand/[0.02] border-l border-brand/10">
                           <Cell value={row.sanchari as CellVal} isMain />
                         </td>
                         <td className="px-4 py-3.5 text-center border-l border-gray-100">
@@ -261,7 +261,7 @@ export function ComparisonMatrix() {
         {/* Legend */}
         <div className="flex flex-wrap items-center justify-center gap-5 mb-10 text-xs text-gray-400">
           {[
-            { el: <div className="w-4 h-4 rounded-full bg-[#4F46E5] flex items-center justify-center"><Check className="w-2.5 h-2.5 text-white" strokeWidth={3} /></div>, label: `${COMPANY.name} feature` },
+            { el: <div className="w-4 h-4 rounded-full bg-brand flex items-center justify-center"><Check className="w-2.5 h-2.5 text-white" strokeWidth={3} /></div>, label: `${COMPANY.name} feature` },
             { el: <div className="w-4 h-4 rounded-full bg-emerald-500/15 border border-emerald-500/25 flex items-center justify-center"><Check className="w-2.5 h-2.5 text-emerald-600" strokeWidth={3} /></div>, label: 'Available' },
             { el: <div className="w-4 h-4 rounded-full bg-amber-100 border border-amber-200 flex items-center justify-center"><Minus className="w-2.5 h-2.5 text-amber-500" strokeWidth={3} /></div>, label: 'Partial' },
             { el: <div className="w-4 h-4 rounded-full bg-gray-100 flex items-center justify-center"><X className="w-2.5 h-2.5 text-gray-300" strokeWidth={2.5} /></div>, label: 'Not available' },
@@ -280,7 +280,7 @@ export function ComparisonMatrix() {
           className="mb-10"
         >
           <div className="text-center mb-10">
-            <p className="text-sm font-bold text-[#4F46E5] uppercase tracking-widest mb-3">Trust Infrastructure</p>
+            <p className="text-sm font-bold text-brand uppercase tracking-widest mb-3">Trust Infrastructure</p>
             <h3 className="text-3xl font-black text-gray-900 tracking-tight">
               {COMPANY.name} is built on a verified foundation.
             </h3>
@@ -314,7 +314,7 @@ export function ComparisonMatrix() {
         {/* ─── Why It Matters ─── */}
         <div>
           <div className="text-center mb-10">
-            <p className="text-sm font-bold text-[#4F46E5] uppercase tracking-widest mb-3">Why It Matters</p>
+            <p className="text-sm font-bold text-brand uppercase tracking-widest mb-3">Why It Matters</p>
             <h3 className="text-3xl font-black text-gray-900 tracking-tight">Built for every commuter.</h3>
           </div>
 

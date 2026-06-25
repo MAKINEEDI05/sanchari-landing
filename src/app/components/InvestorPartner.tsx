@@ -72,7 +72,7 @@ export function InvestorPartner() {
       <div className="container mx-auto px-4 md:px-6">
 
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 text-[#4F46E5] text-sm font-bold mb-6 uppercase tracking-wider border border-indigo-100">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 text-brand text-sm font-bold mb-6 uppercase tracking-wider border border-indigo-100">
             Partners & Investors
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -100,7 +100,7 @@ export function InvestorPartner() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.07 }}
-                  className="bg-white p-5 rounded-2xl border border-gray-100 hover:shadow-xl hover:shadow-[#4F46E5]/10 transition-all"
+                  className="bg-white p-5 rounded-2xl border border-gray-100 hover:shadow-xl hover:shadow-brand/10 transition-all"
                 >
                   <div className={`w-10 h-10 rounded-xl ${metric.bg} ${metric.color} flex items-center justify-center mb-3`}>
                     {metric.icon}
@@ -127,7 +127,7 @@ export function InvestorPartner() {
                   <div className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-1">MVP Progress</div>
                   <div className="text-2xl font-black text-gray-900">Phase 1 — Almost Ready</div>
                 </div>
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#4F46E5] to-[#06B6D4] flex items-center justify-center text-white font-black text-xl shadow-lg shadow-indigo-500/30">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand to-brand-cyan flex items-center justify-center text-white font-black text-xl shadow-lg shadow-indigo-500/30">
                   78%
                 </div>
               </div>
@@ -151,7 +151,7 @@ export function InvestorPartner() {
             </div>
 
             {/* Financial highlight */}
-            <div className="bg-gradient-to-br from-[#4F46E5] to-[#06B6D4] rounded-3xl p-6 text-white mb-6 shadow-xl shadow-indigo-500/20">
+            <div className="bg-gradient-to-br from-brand to-brand-cyan rounded-3xl p-6 text-white mb-6 shadow-xl shadow-indigo-500/20">
               <div className="text-sm font-bold uppercase tracking-wider text-indigo-200 mb-3">Pre-Seed Round</div>
               <div className="text-4xl font-black mb-2">₹15–25 Lakhs</div>
               <div className="text-indigo-200 text-sm mb-4">~$15,700–$26,200 • Infrastructure-only ask</div>

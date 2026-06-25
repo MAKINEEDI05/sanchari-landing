@@ -147,10 +147,10 @@ export function PrivacyPolicyPage() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-11 h-11 rounded-2xl bg-indigo-50 flex items-center justify-center">
-                <Shield className="w-5 h-5 text-[#4F46E5]" />
+                <Shield className="w-5 h-5 text-brand" />
               </div>
               <div>
-                <p className="text-xs font-bold text-[#4F46E5] uppercase tracking-widest font-black">Legal</p>
+                <p className="text-xs font-bold text-brand uppercase tracking-widest font-black">Legal</p>
                 <p className="text-xs text-gray-400">Effective: June 2026 · Version 1.0</p>
               </div>
             </div>
@@ -184,8 +184,8 @@ export function PrivacyPolicyPage() {
           </div>
 
           <div className="mt-16 p-6 bg-indigo-50 border border-indigo-100 rounded-2xl">
-            <p className="text-sm font-bold text-[#4F46E5] mb-1">Questions about this policy?</p>
-            <p className="text-sm text-gray-500">Email us at <a href={`mailto:${COMPANY.contact.privacyEmail}`} className="text-[#4F46E5] font-semibold hover:underline">{COMPANY.contact.privacyEmail}</a>. We respond within 5 business days.</p>
+            <p className="text-sm font-bold text-brand mb-1">Questions about this policy?</p>
+            <p className="text-sm text-gray-500">Email us at <a href={`mailto:${COMPANY.contact.privacyEmail}`} className="text-brand font-semibold hover:underline">{COMPANY.contact.privacyEmail}</a>. We respond within 5 business days.</p>
           </div>
         </div>
       </section>

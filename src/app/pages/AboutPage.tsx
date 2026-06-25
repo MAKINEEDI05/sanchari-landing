@@ -65,7 +65,7 @@ export function AboutPage() {
           </Link>
 
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}>
-            <span className="inline-block px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-[#4F46E5] text-sm font-bold mb-6">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-brand text-sm font-bold mb-6">
               About {COMPANY.name}
             </span>
             <h1 className="text-5xl sm:text-6xl xl:text-7xl font-black text-gray-900 tracking-tight leading-[1.02] mb-6 max-w-4xl">
@@ -76,7 +76,7 @@ export function AboutPage() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/#waitlist"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#4F46E5] text-white font-bold hover:bg-[#4338CA] transition-colors shadow-xl shadow-indigo-500/25">
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-brand text-white font-bold hover:bg-brand-dark transition-colors shadow-xl shadow-indigo-500/25">
                 Join Waitlist <ArrowRight className="w-4 h-4" />
               </Link>
               <Link to="/investors"
@@ -93,7 +93,7 @@ export function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-              <p className="text-sm font-bold text-[#4F46E5] uppercase tracking-widest mb-4">Why We Exist</p>
+              <p className="text-sm font-bold text-brand uppercase tracking-widest mb-4">Why We Exist</p>
               <h2 className="text-4xl font-black text-gray-900 tracking-tight leading-tight mb-6">
                 Millions of empty seats travel daily while commuters face rising costs and real safety concerns.
               </h2>
@@ -108,7 +108,7 @@ export function AboutPage() {
             <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}
               className="grid grid-cols-2 gap-4">
               {[
-                { value: '400M+', label: 'Urban commuters in India', color: 'text-[#4F46E5]' },
+                { value: '400M+', label: 'Urban commuters in India', color: 'text-brand' },
                 { value: '75%', label: 'Women cite safety as top concern', color: 'text-rose-600' },
                 { value: '~60%', label: 'Potential savings vs ride-hailing', color: 'text-emerald-600' },
                 { value: '$21–24B', label: 'Ride-sharing market size (2026)', color: 'text-amber-600' },
@@ -127,7 +127,7 @@ export function AboutPage() {
       <section className="py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-8">
-            <p className="text-sm font-bold text-[#4F46E5] uppercase tracking-widest mb-4">What We Build</p>
+            <p className="text-sm font-bold text-brand uppercase tracking-widest mb-4">What We Build</p>
             <h2 className="text-4xl font-black text-gray-900 tracking-tight leading-tight mb-4">One platform. Four pillars.</h2>
             <p className="text-gray-500 text-lg leading-relaxed">
               {COMPANY.name} is not just a ride-sharing app. It's a unified mobility ecosystem designed for India — with safety, verification, and smart matching at its core.
@@ -155,7 +155,7 @@ export function AboutPage() {
       </section>
 
       {/* Vision */}
-      <section className="py-12 bg-[#4F46E5]">
+      <section className="py-12 bg-brand">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="w-12 h-12 mx-auto mb-6">
@@ -176,7 +176,7 @@ export function AboutPage() {
       <section className="py-14 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl mb-8">
-            <p className="text-sm font-bold text-[#4F46E5] uppercase tracking-widest mb-4">What We Stand For</p>
+            <p className="text-sm font-bold text-brand uppercase tracking-widest mb-4">What We Stand For</p>
             <h2 className="text-4xl font-black text-gray-900 tracking-tight leading-tight">Our values shape every decision.</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -202,7 +202,7 @@ export function AboutPage() {
           <p className="text-gray-500 text-lg mb-8">Join the waitlist or reach out to the founding team directly.</p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link to="/#waitlist"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#4F46E5] text-white font-bold hover:bg-[#4338CA] transition-colors shadow-xl shadow-indigo-500/25">
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-brand text-white font-bold hover:bg-brand-dark transition-colors shadow-xl shadow-indigo-500/25">
               Join Waitlist <ArrowRight className="w-4 h-4" />
             </Link>
             <a href={`mailto:${COMPANY.contact.email}`}

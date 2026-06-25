@@ -37,12 +37,12 @@ export function RidePoolingPage() {
           </Link>
 
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="inline-block px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-[#4F46E5] text-sm font-bold mb-6">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-brand text-sm font-bold mb-6">
               Phase 1 · Core Module
             </span>
             <h1 className="text-5xl sm:text-6xl xl:text-7xl font-black text-gray-900 tracking-tight leading-[1.02] mb-6">
               Ride Pooling.<br />
-              <span className="text-[#4F46E5]">Share your commute.</span>
+              <span className="text-brand">Share your commute.</span>
             </h1>
             <p className="text-xl text-gray-500 leading-relaxed max-w-2xl mb-10">
               Turn your daily commute into a shared journey. Drivers earn more. Riders spend less.
@@ -50,7 +50,7 @@ export function RidePoolingPage() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/#waitlist"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#4F46E5] text-white font-bold hover:bg-[#4338CA] transition-colors shadow-xl shadow-indigo-500/25">
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-brand text-white font-bold hover:bg-brand-dark transition-colors shadow-xl shadow-indigo-500/25">
                 Join Waitlist <ArrowRight className="w-4 h-4" />
               </Link>
               <Link to="/"
@@ -74,7 +74,7 @@ export function RidePoolingPage() {
             ].map((s, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="text-center">
-                <div className="text-2xl sm:text-3xl font-black text-[#4F46E5] mb-1">{s.v}</div>
+                <div className="text-2xl sm:text-3xl font-black text-brand mb-1">{s.v}</div>
                 <div className="text-sm text-gray-500">{s.l}</div>
               </motion.div>
             ))}
@@ -86,7 +86,7 @@ export function RidePoolingPage() {
       <section className="py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl mb-8">
-            <p className="text-sm font-bold text-[#4F46E5] uppercase tracking-widest mb-3">How it works</p>
+            <p className="text-sm font-bold text-brand uppercase tracking-widest mb-3">How it works</p>
             <h2 className="text-4xl font-black text-gray-900 tracking-tight leading-tight">From signup to ride in five steps.</h2>
           </div>
           <div className="space-y-4">
@@ -94,7 +94,7 @@ export function RidePoolingPage() {
               <motion.div key={i} initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }} transition={{ delay: i * 0.08 }}
                 className="flex gap-6 p-6 bg-white border border-gray-100 rounded-2xl hover:shadow-lg hover:border-gray-200 transition-all">
-                <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-[#4F46E5] flex items-center justify-center shrink-0">{step.icon}</div>
+                <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-brand flex items-center justify-center shrink-0">{step.icon}</div>
                 <div>
                   <p className="text-[10px] font-black text-gray-300 uppercase tracking-widest mb-1">{step.step}</p>
                   <h3 className="font-black text-gray-900 mb-1">{step.title}</h3>
@@ -110,7 +110,7 @@ export function RidePoolingPage() {
       <section className="py-14 bg-gray-50 border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl mb-12">
-            <p className="text-sm font-bold text-[#4F46E5] uppercase tracking-widest mb-3">Key benefits</p>
+            <p className="text-sm font-bold text-brand uppercase tracking-widest mb-3">Key benefits</p>
             <h2 className="text-4xl font-black text-gray-900 tracking-tight leading-tight">Why riders and drivers choose Sanchari.</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -118,7 +118,7 @@ export function RidePoolingPage() {
               <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                 className="bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-lg transition-all">
-                <div className="w-10 h-10 rounded-xl bg-indigo-50 text-[#4F46E5] flex items-center justify-center mb-4">{b.icon}</div>
+                <div className="w-10 h-10 rounded-xl bg-indigo-50 text-brand flex items-center justify-center mb-4">{b.icon}</div>
                 <h3 className="font-bold text-gray-900 mb-2">{b.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{b.desc}</p>
               </motion.div>
@@ -128,12 +128,12 @@ export function RidePoolingPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 bg-[#4F46E5]">
+      <section className="py-12 bg-brand">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-black text-white mb-4">Ready to share your first ride?</h2>
           <p className="text-indigo-200 text-lg mb-8">Join the waitlist and be among the first when we launch in your city.</p>
           <Link to="/#waitlist"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-[#4F46E5] font-black hover:bg-indigo-50 transition-colors shadow-xl">
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-brand font-black hover:bg-indigo-50 transition-colors shadow-xl">
             Join Waitlist <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

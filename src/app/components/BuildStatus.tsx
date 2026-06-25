@@ -40,7 +40,7 @@ export function BuildStatus({ variant = 'light' }: BuildStatusProps) {
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className={`text-sm font-bold uppercase tracking-widest mb-4 ${isDark ? 'text-amber-400' : 'text-[#4F46E5]'}`}
+            className={`text-sm font-bold uppercase tracking-widest mb-4 ${isDark ? 'text-amber-400' : 'text-brand'}`}
           >
             Build progress
           </motion.p>
@@ -77,7 +77,7 @@ export function BuildStatus({ variant = 'light' }: BuildStatusProps) {
             <div className="mb-6">
               <div className="flex items-center justify-between mb-2">
                 <span className={`text-sm font-bold ${isDark ? 'text-gray-400' : 'text-gray-700'}`}>MVP Progress</span>
-                <span className={`text-2xl font-black ${isDark ? 'text-amber-400' : 'text-[#4F46E5]'}`}>{pct}%</span>
+                <span className={`text-2xl font-black ${isDark ? 'text-amber-400' : 'text-brand'}`}>{pct}%</span>
               </div>
               <div className={`h-2 rounded-full overflow-hidden ${isDark ? 'bg-white/10' : 'bg-gray-200'}`}>
                 <motion.div
@@ -85,7 +85,7 @@ export function BuildStatus({ variant = 'light' }: BuildStatusProps) {
                   whileInView={{ width: `${pct}%` }}
                   viewport={{ once: true }}
                   transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-                  className={`h-full rounded-full ${isDark ? 'bg-gradient-to-r from-amber-500 to-amber-400' : 'bg-gradient-to-r from-[#4F46E5] to-[#06B6D4]'}`}
+                  className={`h-full rounded-full ${isDark ? 'bg-gradient-to-r from-amber-500 to-amber-400' : 'bg-gradient-to-r from-brand to-brand-cyan'}`}
                 />
               </div>
             </div>
@@ -103,14 +103,14 @@ export function BuildStatus({ variant = 'light' }: BuildStatusProps) {
                   {m.status === 'done'
                     ? <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
                     : m.status === 'progress'
-                    ? <Clock className={`w-4 h-4 shrink-0 animate-pulse ${isDark ? 'text-amber-400' : 'text-[#4F46E5]'}`} />
+                    ? <Clock className={`w-4 h-4 shrink-0 animate-pulse ${isDark ? 'text-amber-400' : 'text-brand'}`} />
                     : <Circle className={`w-4 h-4 shrink-0 ${isDark ? 'text-gray-600' : 'text-gray-300'}`} />}
                   <span
                     className={`text-sm ${
                       m.status === 'done'
                         ? isDark ? 'text-gray-300 font-medium' : 'text-gray-700 font-medium'
                         : m.status === 'progress'
-                        ? isDark ? 'text-amber-400 font-semibold' : 'text-[#4F46E5] font-semibold'
+                        ? isDark ? 'text-amber-400 font-semibold' : 'text-brand font-semibold'
                         : isDark ? 'text-gray-500' : 'text-gray-400'
                     }`}
                   >
@@ -124,7 +124,7 @@ export function BuildStatus({ variant = 'light' }: BuildStatusProps) {
             <div className={`flex flex-wrap gap-4 mt-6 pt-5 border-t text-xs ${isDark ? 'border-white/10 text-gray-500' : 'border-gray-200 text-gray-400'}`}>
               <div className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" /> Complete</div>
               <div className="flex items-center gap-1.5">
-                <Clock className={`w-3.5 h-3.5 ${isDark ? 'text-amber-400' : 'text-[#4F46E5]'}`} /> In Progress
+                <Clock className={`w-3.5 h-3.5 ${isDark ? 'text-amber-400' : 'text-brand'}`} /> In Progress
               </div>
               <div className="flex items-center gap-1.5">
                 <Circle className={`w-3.5 h-3.5 ${isDark ? 'text-gray-600' : 'text-gray-300'}`} /> Upcoming
@@ -195,7 +195,7 @@ export function BuildStatus({ variant = 'light' }: BuildStatusProps) {
                         <div className={`w-10 h-10 rounded-full flex items-center justify-center shadow-lg ${
                           isDark
                             ? 'bg-gradient-to-br from-amber-500 to-amber-400 shadow-amber-900/40'
-                            : 'bg-gradient-to-br from-[#4F46E5] to-[#6366F1] shadow-indigo-500/30'
+                            : 'bg-gradient-to-br from-brand to-[#6366F1] shadow-indigo-500/30'
                         }`}>
                           <div className="w-2.5 h-2.5 rounded-full bg-white" />
                         </div>
@@ -218,7 +218,7 @@ export function BuildStatus({ variant = 'light' }: BuildStatusProps) {
                     <div className="pt-1.5 min-w-0">
                       <p className={`text-[10px] font-black uppercase tracking-widest mb-1 ${
                         item.state === 'active'
-                          ? isDark ? 'text-amber-400' : 'text-[#4F46E5]'
+                          ? isDark ? 'text-amber-400' : 'text-brand'
                           : isDark ? 'text-gray-600' : 'text-gray-400'
                       }`}>
                         {item.quarter}
@@ -258,7 +258,7 @@ export function BuildStatus({ variant = 'light' }: BuildStatusProps) {
               }`}
             >
               <div>
-                <p className={`text-[10px] font-black uppercase tracking-widest mb-1 ${isDark ? 'text-amber-500' : 'text-[#4F46E5]'}`}>
+                <p className={`text-[10px] font-black uppercase tracking-widest mb-1 ${isDark ? 'text-amber-500' : 'text-brand'}`}>
                   Pre-Seed Open
                 </p>
                 <p className={`text-2xl font-black ${isDark ? 'text-white' : 'text-gray-900'}`}>₹15–25 Lakhs</p>
@@ -275,7 +275,7 @@ export function BuildStatus({ variant = 'light' }: BuildStatusProps) {
               ) : (
                 <Link
                   to="/investors"
-                  className="shrink-0 inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#4F46E5] hover:bg-[#4338CA] text-white text-sm font-black transition-colors"
+                  className="shrink-0 inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-brand hover:bg-brand-dark text-white text-sm font-black transition-colors"
                 >
                   Get deck <ArrowRight className="w-3.5 h-3.5" />
                 </Link>

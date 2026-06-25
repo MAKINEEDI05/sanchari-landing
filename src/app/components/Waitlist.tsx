@@ -38,8 +38,8 @@ export function Waitlist() {
     <section id="waitlist" className="py-16 bg-[#060612] overflow-hidden relative">
       {/* Background */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#4F46E5]/15 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#06B6D4]/10 rounded-full blur-[100px]" />
+        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-brand/15 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-brand-cyan/10 rounded-full blur-[100px]" />
         <div className="absolute inset-0 opacity-[0.04]"
           style={{
             backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)',
@@ -122,7 +122,7 @@ export function Waitlist() {
                         onChange={handleChange}
                         placeholder="Your full name"
                         required
-                        className="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#4F46E5] focus:border-transparent transition-all text-sm"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all text-sm"
                       />
                     </div>
 
@@ -136,7 +136,7 @@ export function Waitlist() {
                         onChange={handleChange}
                         placeholder="you@example.com"
                         required
-                        className="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#4F46E5] focus:border-transparent transition-all text-sm"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all text-sm"
                       />
                     </div>
 
@@ -148,7 +148,7 @@ export function Waitlist() {
                         value={form.city}
                         onChange={handleChange}
                         required
-                        className="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-[#4F46E5] focus:border-transparent transition-all text-sm appearance-none cursor-pointer"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all text-sm appearance-none cursor-pointer"
                         style={{ colorScheme: 'dark' }}
                       >
                         <option value="" disabled className="bg-gray-900">Select your city</option>
@@ -166,7 +166,7 @@ export function Waitlist() {
                         value={form.role}
                         onChange={handleChange}
                         required
-                        className="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-[#4F46E5] focus:border-transparent transition-all text-sm appearance-none cursor-pointer"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all text-sm appearance-none cursor-pointer"
                         style={{ colorScheme: 'dark' }}
                       >
                         <option value="" disabled className="bg-gray-900">I am a...</option>
@@ -179,7 +179,7 @@ export function Waitlist() {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full flex items-center justify-center gap-2.5 py-4 rounded-xl bg-[#4F46E5] hover:bg-[#4338CA] text-white font-black transition-all duration-150 shadow-xl shadow-indigo-900/50 active:scale-[0.98] disabled:opacity-70"
+                      className="w-full flex items-center justify-center gap-2.5 py-4 rounded-xl bg-brand hover:bg-brand-dark text-white font-black transition-all duration-150 shadow-xl shadow-indigo-900/50 active:scale-[0.98] disabled:opacity-70"
                     >
                       {loading ? (
                         <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />

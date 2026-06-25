@@ -25,8 +25,8 @@ export function Download() {
   return (
     <section className="py-24 relative overflow-hidden bg-gray-950 text-white">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#4F46E5]/30 via-transparent to-[#06B6D4]/20 z-0"></div>
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#4F46E5]/20 rounded-full blur-[120px] z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-brand/30 via-transparent to-brand-cyan/20 z-0"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand/20 rounded-full blur-[120px] z-0"></div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -61,11 +61,11 @@ export function Download() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email address"
                   required
-                  className="flex-1 bg-white/10 border border-white/20 rounded-full py-4 px-6 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4F46E5] focus:border-transparent transition-all"
+                  className="flex-1 bg-white/10 border border-white/20 rounded-full py-4 px-6 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all"
                 />
                 <button
                   type="submit"
-                  className="flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#4F46E5] hover:bg-[#4338CA] text-white font-bold transition-colors shadow-xl shadow-indigo-500/30 whitespace-nowrap"
+                  className="flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-brand hover:bg-brand-dark text-white font-bold transition-colors shadow-xl shadow-indigo-500/30 whitespace-nowrap"
                 >
                   Join Waitlist <ArrowRight className="w-4 h-4" />
                 </button>

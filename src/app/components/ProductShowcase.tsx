@@ -6,8 +6,8 @@ export function ProductShowcase() {
   return (
     <section className="py-24 overflow-hidden bg-gray-900 text-white relative" id="screenshots">
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#4F46E5] rounded-full blur-[150px] opacity-20 translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#06B6D4] rounded-full blur-[150px] opacity-20 -translate-x-1/2 translate-y-1/2"></div>
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand rounded-full blur-[150px] opacity-20 translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-cyan rounded-full blur-[150px] opacity-20 -translate-x-1/2 translate-y-1/2"></div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
@@ -64,7 +64,7 @@ export function ProductShowcase() {
                          <span className="font-bold text-gray-900">14 mins</span>
                        </div>
                        <div className="w-full bg-gray-200 rounded-full h-2">
-                         <div className="bg-gradient-to-r from-[#4F46E5] to-[#06B6D4] h-2 rounded-full w-[70%]"></div>
+                         <div className="bg-gradient-to-r from-brand to-brand-cyan h-2 rounded-full w-[70%]"></div>
                        </div>
                      </div>
                      
@@ -95,9 +95,9 @@ export function ProductShowcase() {
                          <div className="text-[#10B981] bg-emerald-50 px-2 py-1 rounded text-xs font-bold">Verified</div>
                       </div>
                     ))}
-                    <div className="mt-8 text-center p-4 bg-[#4F46E5]/10 rounded-2xl border border-[#4F46E5]/20">
+                    <div className="mt-8 text-center p-4 bg-brand/10 rounded-2xl border border-brand/20">
                       <div className="text-3xl mb-2">🏆</div>
-                      <div className="font-bold text-[#4F46E5]">Gold Tier Member</div>
+                      <div className="font-bold text-brand">Gold Tier Member</div>
                     </div>
                   </div>
                 </div>

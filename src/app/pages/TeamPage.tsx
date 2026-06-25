@@ -27,7 +27,7 @@ export function TeamPage() {
           />
         </div>
         <h3 className="text-lg font-black text-gray-900 mb-0.5 tracking-tight">{member.name}</h3>
-        <p className="text-[#4F46E5] text-xs font-bold uppercase tracking-wider mb-3">{member.role}</p>
+        <p className="text-brand text-xs font-bold uppercase tracking-wider mb-3">{member.role}</p>
         <p className="text-gray-500 text-sm leading-relaxed mb-6">{member.bio}</p>
       </div>
 
@@ -64,7 +64,7 @@ export function TeamPage() {
           </Link>
 
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-[#4F46E5] text-xs font-bold mb-6">
+            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-brand text-xs font-bold mb-6">
               <Sparkles className="w-3.5 h-3.5" /> Meet the Minds
             </span>
             <h1 className="text-5xl sm:text-6xl font-black text-gray-900 tracking-tight leading-[1.04] mb-6 max-w-3xl">

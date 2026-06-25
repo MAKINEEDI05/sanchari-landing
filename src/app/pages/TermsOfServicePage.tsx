@@ -196,7 +196,7 @@ export function TermsOfServicePage() {
             <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Contents</p>
             <div className="grid sm:grid-cols-2 gap-2">
               {sections.map((s, i) => (
-                <a key={i} href={`#section-${i}`} className="text-sm text-gray-500 hover:text-[#4F46E5] transition-colors py-0.5">
+                <a key={i} href={`#section-${i}`} className="text-sm text-gray-500 hover:text-brand transition-colors py-0.5">
                   {s.title}
                 </a>
               ))}
@@ -222,7 +222,7 @@ export function TermsOfServicePage() {
 
           <div className="mt-16 p-6 bg-gray-50 border border-gray-100 rounded-2xl">
             <p className="text-sm font-bold text-gray-700 mb-1">Questions about these terms?</p>
-            <p className="text-sm text-gray-500">Email <a href={`mailto:${COMPANY.contact.legalEmail}`} className="text-[#4F46E5] font-semibold hover:underline">{COMPANY.contact.legalEmail}</a> or visit our <Link to="/privacy" className="text-[#4F46E5] font-semibold hover:underline">Privacy Policy</Link>.</p>
+            <p className="text-sm text-gray-500">Email <a href={`mailto:${COMPANY.contact.legalEmail}`} className="text-brand font-semibold hover:underline">{COMPANY.contact.legalEmail}</a> or visit our <Link to="/privacy" className="text-brand font-semibold hover:underline">Privacy Policy</Link>.</p>
           </div>
         </div>
       </section>

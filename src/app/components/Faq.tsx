@@ -10,10 +10,10 @@ function FaqItem({ q, a, isOpen, onToggle }: { q: string; a: string; isOpen: boo
         onClick={onToggle}
         className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
       >
-        <span className={`font-bold text-sm sm:text-base leading-snug transition-colors duration-150 ${isOpen ? 'text-[#4F46E5]' : 'text-gray-900'}`}>
+        <span className={`font-bold text-sm sm:text-base leading-snug transition-colors duration-150 ${isOpen ? 'text-brand' : 'text-gray-900'}`}>
           {q}
         </span>
-        <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-200 ${isOpen ? 'bg-[#4F46E5] text-white' : 'bg-gray-100 text-gray-500'}`}>
+        <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-200 ${isOpen ? 'bg-brand text-white' : 'bg-gray-100 text-gray-500'}`}>
           {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
         </div>
       </button>
@@ -98,17 +98,17 @@ export function Faq() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <p className="text-sm font-bold text-[#4F46E5] uppercase tracking-widest mb-4">FAQ</p>
+              <p className="text-sm font-bold text-brand uppercase tracking-widest mb-4">FAQ</p>
               <h2 className="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight leading-[1.08] mb-5">
                 Questions?<br />
-                <span className="text-[#4F46E5]">We've got answers.</span>
+                <span className="text-brand">We've got answers.</span>
               </h2>
               <p className="text-gray-500 text-base leading-relaxed mb-8">
                 Everything you need to know about {COMPANY.name} — the platform, safety, verification, and our launch timeline.
               </p>
               <a
                 href={`mailto:${COMPANY.contact.email}`}
-                className="inline-flex items-center gap-2 text-sm font-bold text-[#4F46E5] hover:text-[#4338CA] transition-colors group"
+                className="inline-flex items-center gap-2 text-sm font-bold text-brand hover:text-brand-dark transition-colors group"
               >
                 Still have questions? Email us
                 <span className="group-hover:translate-x-0.5 transition-transform">→</span>
