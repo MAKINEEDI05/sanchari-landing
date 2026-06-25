@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import faviconImg from '../assets/sanchari-favicon.png';
+import { colors } from '@/theme';
 
 export function Root() {
   const { pathname } = useLocation();
@@ -28,7 +29,7 @@ export function Root() {
       <style dangerouslySetInnerHTML={{ __html: `
         html { scroll-behavior: smooth; }
         * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-        ::selection { background: #4F46E5; color: white; }
+        ::selection { background: ${colors.brand}; color: white; }
       ` }} />
       <Navbar />
       <main>
