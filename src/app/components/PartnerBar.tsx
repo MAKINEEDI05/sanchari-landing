@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { Container } from './layout/Container';
 
 const partners = [
   {
@@ -120,7 +121,7 @@ const partners = [
 export function PartnerBar() {
   return (
     <section className="py-14 border-y border-gray-100 bg-gray-50/60">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Container>
         <motion.p
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -162,7 +163,7 @@ export function PartnerBar() {
             </motion.div>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

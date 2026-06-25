@@ -11,6 +11,7 @@ import {
 import { FEATURES } from '../../config/features';
 import { STATS } from '../../config/stats';
 import { COMPANY } from '../../config/company';
+import { Container } from './layout/Container';
 
 const iconMap: Record<string, React.ReactNode> = {
   WomenOnlyIcon: <WomenOnlyIcon />,
@@ -23,7 +24,7 @@ const iconMap: Record<string, React.ReactNode> = {
 export function WomenSafety() {
   return (
     <section id="safety" className="py-16 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Container>
 
         {/* Full-bleed rose card */}
         <motion.div
@@ -164,7 +165,7 @@ export function WomenSafety() {
 
           </div>
         </motion.div>
-      </div>
+      </Container>
     </section>
   );
 }

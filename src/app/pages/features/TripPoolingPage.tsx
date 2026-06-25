@@ -7,6 +7,7 @@ import {
   UserGroupIcon,
   SafetyShieldIcon,
 } from '../../components/icons/SanchariIcons';
+import { Container } from '../../components/layout/Container';
 
 const steps = [
   { icon: <TripPoolingIcon />, step: '01', title: 'Plan your trip', desc: 'Enter your origin, destination, dates, and number of co-travellers. Add optional stops or interest tags (hill station, temple, beach).' },
@@ -30,7 +31,7 @@ export function TripPoolingPage() {
       {/* Hero */}
       <section className="relative pt-20 pb-12 overflow-hidden">
         <div className="absolute top-0 right-0 w-[650px] h-[550px] bg-gradient-to-bl from-orange-100/60 via-amber-50/30 to-transparent rounded-full blur-3xl -z-10" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <Link to="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-gray-700 text-sm font-semibold mb-10 transition-colors group">
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" /> Back to Home
           </Link>
@@ -58,23 +59,23 @@ export function TripPoolingPage() {
               </Link>
             </div>
           </motion.div>
-        </div>
+        </Container>
       </section>
 
       {/* Phase notice */}
       <div className="bg-amber-50 border-y border-amber-100 py-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-3">
+        <Container className="flex items-center gap-3">
           <Clock className="w-4 h-4 text-amber-600 shrink-0" />
           <p className="text-amber-800 text-sm font-semibold">
             Trip Pooling is planned for Phase 3, following Ride Pooling and Parcel Pooling launches.
             Join the waitlist to be notified when it goes live.
           </p>
-        </div>
+        </Container>
       </div>
 
       {/* Trip types */}
       <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="max-w-xl mb-12">
             <p className="text-sm font-bold text-orange-600 uppercase tracking-widest mb-3">Use cases</p>
             <h2 className="text-4xl font-black text-gray-900 tracking-tight leading-tight">
@@ -94,12 +95,12 @@ export function TripPoolingPage() {
               </motion.div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Cost example */}
       <section className="py-16 bg-gray-50 border-y border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="max-w-xl mb-10">
             <p className="text-sm font-bold text-orange-600 uppercase tracking-widest mb-3">Cost transparency</p>
             <h2 className="text-4xl font-black text-gray-900 tracking-tight leading-tight">
@@ -135,12 +136,12 @@ export function TripPoolingPage() {
             ))}
           </div>
           <p className="text-xs text-gray-400 text-center mt-6">Fuel estimates based on ₹104/L petrol. Actual costs vary by vehicle and route.</p>
-        </div>
+        </Container>
       </section>
 
       {/* How it works */}
       <section className="py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="max-w-xl mb-12">
             <p className="text-sm font-bold text-orange-600 uppercase tracking-widest mb-3">Process</p>
             <h2 className="text-4xl font-black text-gray-900 tracking-tight leading-tight">Plan, share, go.</h2>
@@ -159,7 +160,7 @@ export function TripPoolingPage() {
               </motion.div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* CTA */}

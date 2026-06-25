@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Plus, Minus } from 'lucide-react';
 import { COMPANY } from '../../config/company';
+import { Container } from './layout/Container';
 
 function FaqItem({ q, a, isOpen, onToggle }: { q: string; a: string; isOpen: boolean; onToggle: () => void }) {
   return (
@@ -88,7 +89,7 @@ export function Faq() {
 
   return (
     <section id="faq" className="py-16 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Container>
         <div className="grid lg:grid-cols-[380px_1fr] gap-12 lg:gap-16 items-start">
 
           {/* Left sticky panel */}
@@ -136,7 +137,7 @@ export function Faq() {
           </motion.div>
 
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

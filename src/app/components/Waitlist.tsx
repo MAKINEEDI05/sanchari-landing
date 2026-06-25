@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, CheckCircle2, Sparkles, MapPin, Mail, User, Car } from 'lucide-react';
 import { COMPANY } from '../../config/company';
+import { Container } from './layout/Container';
 
 const cities = [
   'Hyderabad', 'Bangalore', 'Pune', 'Mumbai', 'Chennai',
@@ -48,7 +49,7 @@ export function Waitlist() {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <Container className="relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 xl:gap-24 items-center">
 
           {/* Left: copy */}
@@ -235,7 +236,7 @@ export function Waitlist() {
           </motion.div>
 
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

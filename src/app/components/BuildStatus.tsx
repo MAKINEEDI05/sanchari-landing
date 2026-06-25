@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { CheckCircle2, Clock, Circle, ArrowRight } from 'lucide-react';
 import { COMPANY } from '../../config/company';
+import { Container } from './layout/Container';
 
 const milestones = [
   { label: 'Backend API (Node.js + Express)', status: 'done' },
@@ -32,7 +33,7 @@ export function BuildStatus({ variant = 'light' }: BuildStatusProps) {
 
   return (
     <section className={isDark ? 'py-14 border-t border-white/5 bg-white/[0.02]' : 'py-16 bg-white'}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Container>
 
         {/* Header */}
         <div className="max-w-2xl mb-10">
@@ -283,7 +284,7 @@ export function BuildStatus({ variant = 'light' }: BuildStatusProps) {
             </motion.div>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

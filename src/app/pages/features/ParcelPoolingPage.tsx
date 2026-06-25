@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { ArrowLeft, ArrowRight, Package, Clock, ShieldCheck, MapPin, IndianRupee, Truck, Camera, Star } from 'lucide-react';
+import { Container } from '../../components/layout/Container';
 
 const steps = [
   { icon: <Package className="w-6 h-6" />, step: '01', title: 'List your parcel', desc: 'Describe the parcel, weight category, origin, destination, and when it needs to arrive.' },
@@ -24,7 +25,7 @@ export function ParcelPoolingPage() {
       {/* Hero */}
       <section className="relative pt-20 pb-12 overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[500px] bg-gradient-to-bl from-emerald-100/60 via-teal-50/30 to-transparent rounded-full blur-3xl -z-10" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <Link to="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-gray-700 text-sm font-semibold mb-10 transition-colors group">
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" /> Back to Home
           </Link>
@@ -52,23 +53,23 @@ export function ParcelPoolingPage() {
               </Link>
             </div>
           </motion.div>
-        </div>
+        </Container>
       </section>
 
       {/* Phase notice */}
       <div className="bg-amber-50 border-y border-amber-100 py-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-3">
+        <Container className="flex items-center gap-3">
           <Clock className="w-4 h-4 text-amber-600 shrink-0" />
           <p className="text-amber-800 text-sm font-semibold">
             Parcel Pooling is planned for Phase 2, following our Ride Pooling launch.
             Join the waitlist to be notified when it goes live.
           </p>
-        </div>
+        </Container>
       </div>
 
       {/* Cost comparison */}
       <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="max-w-xl mb-12">
             <p className="text-sm font-bold text-emerald-600 uppercase tracking-widest mb-3">Cost comparison</p>
             <h2 className="text-4xl font-black text-gray-900 tracking-tight leading-tight">
@@ -103,12 +104,12 @@ export function ParcelPoolingPage() {
             ))}
           </div>
           <p className="text-xs text-gray-400 text-center">Estimates for 2 kg parcel. Final fares set by drivers.</p>
-        </div>
+        </Container>
       </section>
 
       {/* Parcel categories */}
       <section className="py-16 bg-gray-50 border-y border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <p className="text-sm font-bold text-emerald-600 uppercase tracking-widest mb-8 text-center">Supported categories</p>
           <div className="grid sm:grid-cols-3 gap-5">
             {categories.map((c, i) => (
@@ -120,12 +121,12 @@ export function ParcelPoolingPage() {
               </div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* How it works */}
       <section className="py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="max-w-xl mb-12">
             <p className="text-sm font-bold text-emerald-600 uppercase tracking-widest mb-3">Process</p>
             <h2 className="text-4xl font-black text-gray-900 tracking-tight leading-tight">Five steps, door to door.</h2>
@@ -144,7 +145,7 @@ export function ParcelPoolingPage() {
               </motion.div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* CTA */}

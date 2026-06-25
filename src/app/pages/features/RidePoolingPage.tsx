@@ -8,6 +8,7 @@ import {
   SmartSavingsIcon,
   CalendarScheduleIcon,
 } from '../../components/icons/SanchariIcons';
+import { Container } from '../../components/layout/Container';
 
 const howItWorks = [
   { icon: <CalendarScheduleIcon />, step: '01', title: 'Driver creates a ride', desc: 'Set your route, date, time, available seats, and your price. You\'re in control — no algorithm sets your fare.' },
@@ -31,7 +32,7 @@ export function RidePoolingPage() {
       {/* Hero */}
       <section className="relative pt-20 pb-12 overflow-hidden">
         <div className="absolute top-0 right-0 w-[700px] h-[600px] bg-gradient-to-bl from-indigo-100/70 via-cyan-50/30 to-transparent rounded-full blur-3xl -z-10" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <Link to="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-gray-700 text-sm font-semibold mb-10 transition-colors group">
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" /> Back to Home
           </Link>
@@ -59,12 +60,12 @@ export function RidePoolingPage() {
               </Link>
             </div>
           </motion.div>
-        </div>
+        </Container>
       </section>
 
       {/* Key stats */}
       <section className="py-12 bg-gray-50 border-y border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
             {[
               { v: '40–60%', l: 'Avg. savings vs Uber/Ola' },
@@ -79,12 +80,12 @@ export function RidePoolingPage() {
               </motion.div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* How it works */}
       <section className="py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="max-w-xl mb-8">
             <p className="text-sm font-bold text-brand uppercase tracking-widest mb-3">How it works</p>
             <h2 className="text-4xl font-black text-gray-900 tracking-tight leading-tight">From signup to ride in five steps.</h2>
@@ -103,12 +104,12 @@ export function RidePoolingPage() {
               </motion.div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Benefits */}
       <section className="py-14 bg-gray-50 border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="max-w-xl mb-12">
             <p className="text-sm font-bold text-brand uppercase tracking-widest mb-3">Key benefits</p>
             <h2 className="text-4xl font-black text-gray-900 tracking-tight leading-tight">Why riders and drivers choose Sanchari.</h2>
@@ -124,7 +125,7 @@ export function RidePoolingPage() {
               </motion.div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* CTA */}

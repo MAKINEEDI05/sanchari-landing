@@ -13,6 +13,7 @@ import {
   SmartMobilityIcon,
 } from './icons/SanchariIcons';
 import { COMPANY } from '../../config/company';
+import { Container } from './layout/Container';
 
 type CellVal = true | false | 'partial' | 'soon';
 
@@ -141,7 +142,7 @@ const whyCards = [
 export function ComparisonMatrix() {
   return (
     <section className="py-14 bg-gray-50/70">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Container>
 
         {/* Section header */}
         <div className="max-w-3xl mb-8">
@@ -341,7 +342,7 @@ export function ComparisonMatrix() {
           </div>
         </div>
 
-      </div>
+      </Container>
     </section>
   );
 }

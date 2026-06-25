@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 import { ArrowLeft, Linkedin, Github, Twitter, Sparkles } from 'lucide-react';
 import { TEAM, TeamMember } from '../../config/team';
 import { COMPANY } from '../../config/company';
+import { Container } from '../components/layout/Container';
 
 export function TeamPage() {
   const founder = TEAM.find((member) => member.category === 'founder');
@@ -58,7 +59,7 @@ export function TeamPage() {
         <div className="absolute top-0 right-0 w-[600px] h-[500px] bg-gradient-to-bl from-indigo-100/50 via-pink-50/20 to-transparent rounded-full blur-3xl -z-10" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-cyan-50/40 to-transparent rounded-full blur-3xl -z-10" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <Link to="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-gray-700 text-sm font-semibold mb-10 transition-colors group">
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" /> Back to Home
           </Link>
@@ -74,13 +75,13 @@ export function TeamPage() {
               We are a group of creators, engineers, advisors, and safety advocates building the future of safe mobility in India.
             </p>
           </motion.div>
-        </div>
+        </Container>
       </section>
 
       {/* Founder Section */}
       {founder && (
         <section className="py-16 bg-gray-50 border-b border-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Container>
             <div className="max-w-4xl bg-white border border-gray-100 rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-100/40 mx-auto">
               <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
                 <div className="relative w-44 h-44 rounded-3xl overflow-hidden border border-gray-100 shrink-0 shadow-lg">
@@ -113,14 +114,14 @@ export function TeamPage() {
                 </div>
               </div>
             </div>
-          </div>
+          </Container>
         </section>
       )}
 
       {/* Core Team */}
       {coreMembers.length > 0 && (
         <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Container>
             <div className="mb-10 text-center md:text-left">
               <h2 className="text-3xl font-black text-gray-900 tracking-tight">Core Execution Team</h2>
               <p className="text-gray-500 text-sm mt-2">Developing solutions to safety and transportation mismatches.</p>
@@ -130,14 +131,14 @@ export function TeamPage() {
                 <MemberCard key={i} member={member} />
               ))}
             </div>
-          </div>
+          </Container>
         </section>
       )}
 
       {/* Advisors */}
       {advisors.length > 0 && (
         <section className="py-16 bg-gray-50 border-y border-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Container>
             <div className="mb-10 text-center md:text-left">
               <h2 className="text-3xl font-black text-gray-900 tracking-tight">Board & Strategic Advisors</h2>
               <p className="text-gray-500 text-sm mt-2">Guiding {COMPANY.name} on policy, urban planning, and platform safety.</p>
@@ -147,14 +148,14 @@ export function TeamPage() {
                 <MemberCard key={i} member={member} />
               ))}
             </div>
-          </div>
+          </Container>
         </section>
       )}
 
       {/* Contributors */}
       {contributors.length > 0 && (
         <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Container>
             <div className="mb-10 text-center md:text-left">
               <h2 className="text-3xl font-black text-gray-900 tracking-tight">Open Source & Community Contributors</h2>
               <p className="text-gray-500 text-sm mt-2">Valued minds helping build and secure {COMPANY.name} ecosystem modules.</p>
@@ -164,7 +165,7 @@ export function TeamPage() {
                 <MemberCard key={i} member={member} />
               ))}
             </div>
-          </div>
+          </Container>
         </section>
       )}
     </div>

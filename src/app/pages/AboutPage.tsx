@@ -15,6 +15,7 @@ import {
 import { COMPANY } from '../../config/company';
 import { FEATURES } from '../../config/features';
 import { STATS } from '../../config/stats';
+import { Container } from '../components/layout/Container';
 
 const iconMap: Record<string, React.ReactNode> = {
   RidePoolingIcon: <RidePoolingIcon />,
@@ -59,7 +60,7 @@ export function AboutPage() {
         <div className="absolute top-0 right-0 w-[700px] h-[600px] bg-gradient-to-bl from-indigo-100/60 via-cyan-50/30 to-transparent rounded-full blur-3xl -z-10" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-pink-100/40 to-transparent rounded-full blur-3xl -z-10" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <Link to="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-gray-700 text-sm font-semibold mb-10 transition-colors group">
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" /> Back to Home
           </Link>
@@ -85,12 +86,12 @@ export function AboutPage() {
               </Link>
             </div>
           </motion.div>
-        </div>
+        </Container>
       </section>
 
       {/* Why we exist */}
       <section className="py-12 bg-gray-50 border-y border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <p className="text-sm font-bold text-brand uppercase tracking-widest mb-4">Why We Exist</p>
@@ -120,12 +121,12 @@ export function AboutPage() {
               ))}
             </motion.div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* What we build */}
       <section className="py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="max-w-2xl mb-8">
             <p className="text-sm font-bold text-brand uppercase tracking-widest mb-4">What We Build</p>
             <h2 className="text-4xl font-black text-gray-900 tracking-tight leading-tight mb-4">One platform. Four pillars.</h2>
@@ -151,7 +152,7 @@ export function AboutPage() {
               </motion.div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Vision */}
@@ -174,7 +175,7 @@ export function AboutPage() {
 
       {/* Values */}
       <section className="py-14 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="max-w-xl mb-8">
             <p className="text-sm font-bold text-brand uppercase tracking-widest mb-4">What We Stand For</p>
             <h2 className="text-4xl font-black text-gray-900 tracking-tight leading-tight">Our values shape every decision.</h2>
@@ -192,7 +193,7 @@ export function AboutPage() {
               </motion.div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* CTA */}

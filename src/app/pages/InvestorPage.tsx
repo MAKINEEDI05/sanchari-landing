@@ -19,6 +19,7 @@ import {
 import { BuildStatus } from '../components/BuildStatus';
 import { COMPANY } from '../../config/company';
 import { STATS } from '../../config/stats';
+import { Container } from '../components/layout/Container';
 
 const iconMap: Record<string, React.ReactNode> = {
   SustainabilityIcon: <div className="w-6 h-6"><SustainabilityIcon /></div>,
@@ -174,7 +175,7 @@ export function InvestorPage() {
           <div className="absolute bottom-0 right-1/4 w-[500px] h-[400px] bg-brand/6 rounded-full blur-[100px]" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <Container className="relative z-10">
           <Link to="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-gray-700 text-sm font-semibold mb-10 transition-colors group">
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" /> Back to Home
           </Link>
@@ -214,12 +215,12 @@ export function InvestorPage() {
               </motion.div>
             </div>
           </motion.div>
-        </div>
+        </Container>
       </section>
 
       {/* ── Market stats bar ── */}
       <section className="py-12 border-y border-gray-100 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
             {STATS.investor.map((s, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
@@ -231,12 +232,12 @@ export function InvestorPage() {
               </motion.div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* ── Why invest ── */}
       <section className="py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="mb-8">
             <p className="text-amber-600 text-sm font-bold uppercase tracking-widest mb-3">Investment thesis</p>
             <h2 className="text-4xl sm:text-5xl font-black tracking-tight leading-[1.06] mb-4 text-gray-900">Why {COMPANY.name}. Why now.</h2>
@@ -255,7 +256,7 @@ export function InvestorPage() {
               </motion.div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* ── MVP traction ── */}
@@ -263,7 +264,7 @@ export function InvestorPage() {
 
       {/* ── Revenue model ── */}
       <section className="py-14 border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="mb-12">
             <p className="text-amber-600 text-sm font-bold uppercase tracking-widest mb-3">Revenue model</p>
             <h2 className="text-4xl font-black tracking-tight leading-tight mb-4 text-gray-900">Multiple revenue streams.</h2>
@@ -288,7 +289,7 @@ export function InvestorPage() {
               </motion.div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* ── CTA band ── */}
