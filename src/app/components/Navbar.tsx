@@ -1,0 +1,149 @@
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router';
+import { Menu, X, ArrowRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+import logoImg from '../../assets/sanchari-logo.png';
+import { ImageWithFallback } from './figma/ImageWithFallback';
+import { COMPANY } from '../../config/company';
+import { NAVIGATION } from '../../config/navigation';
+
+export function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
+  const isHome = pathname === '/';
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  return (
+    <header
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-white/80 backdrop-blur-xl shadow-sm border-b border-gray-100/80'
+          : 'bg-transparent'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 lg:h-[68px]">
+
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2 shrink-0">
+            <ImageWithFallback src={logoImg} alt="" className="h-9 w-9 object-contain" />
+            <span className="font-black text-[1.1rem] text-gray-900 tracking-[-0.02em]">{COMPANY.name}</span>
+          </Link>
+
+          {/* Desktop nav */}
+          <nav className="hidden lg:flex items-center gap-1">
+            {NAVIGATION.navbar.map((link) => {
+              const isHash = link.href.startsWith('/#');
+              if (isHash) {
+                return (
+                  <a
+                    key={link.name}
+                    href={isHome ? link.href.replace('/', '') : link.href}
+                    className="px-4 py-2 text-sm font-semibold text-gray-500 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all duration-150"
+                  >
+                    {link.name}
+                  </a>
+                );
+              } else {
+                return (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    className={`px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-150 ${
+                      link.href === '/investors'
+                        ? 'text-amber-600 hover:text-amber-700 hover:bg-amber-50'
+                        : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              }
+            })}
+          </nav>
+
+          {/* Desktop CTA */}
+          <div className="hidden lg:flex items-center gap-3">
+            <a
+              href={isHome ? '#waitlist' : '/#waitlist'}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#4F46E5] text-white text-sm font-bold hover:bg-[#4338CA] active:scale-95 transition-all duration-150 shadow-lg shadow-[#4F46E5]/25"
+            >
+              Join Waitlist <ArrowRight className="w-3.5 h-3.5" />
+            </a>
+          </div>
+
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
+            aria-label="Toggle menu"
+          >
+            {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            key="mobile-menu"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+            className="lg:hidden overflow-hidden bg-white border-b border-gray-100"
+          >
+            <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
+              {NAVIGATION.navbar.map((link) => {
+                const isHash = link.href.startsWith('/#');
+                if (isHash) {
+                  return (
+                    <a
+                      key={link.name}
+                      href={isHome ? link.href.replace('/', '') : link.href}
+                      onClick={() => setOpen(false)}
+                      className="flex items-center px-4 py-3 rounded-xl text-gray-700 font-semibold hover:bg-gray-50 transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  );
+                } else {
+                  return (
+                    <Link
+                      key={link.name}
+                      to={link.href}
+                      onClick={() => setOpen(false)}
+                      className={`flex items-center px-4 py-3 rounded-xl font-semibold transition-colors ${
+                        link.href === '/investors'
+                          ? 'text-amber-600 hover:bg-amber-50'
+                          : 'text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  );
+                }
+              })}
+              <div className="pt-3 border-t border-gray-100 mt-3">
+                <a
+                  href={isHome ? '#waitlist' : '/#waitlist'}
+                  onClick={() => setOpen(false)}
+                  className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl bg-[#4F46E5] text-white font-bold hover:bg-[#4338CA] transition-colors"
+                >
+                  Join Waitlist <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
+  );
+}
