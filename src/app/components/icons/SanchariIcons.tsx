@@ -371,38 +371,6 @@ export const SmartSavingsIcon = () => (
   </svg>
 );
 
-/* ─── Simple Trust Badges ─── */
-
-export const VerifiedDriverBadge = () => (
-  <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
-    <circle cx="12" cy="12" r="9" fill="#4F46E5" fillOpacity="0.1" stroke="#4F46E5" strokeWidth="1.5"/>
-    <path d="M8 12l3 3 5-6" stroke="#4F46E5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
-export const VerifiedVehicleBadge = () => (
-  <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
-    <circle cx="12" cy="12" r="9" fill="#10B981" fillOpacity="0.1" stroke="#10B981" strokeWidth="1.5"/>
-    <path d="M8 12l3 3 5-6" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
-export const SecurePaymentBadge = () => (
-  <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
-    <circle cx="12" cy="12" r="9" fill="#06B6D4" fillOpacity="0.1" stroke="#06B6D4" strokeWidth="1.5"/>
-    <rect x="8" y="10" width="8" height="6" rx="1" stroke="#06B6D4" strokeWidth="1.5" fill="none"/>
-    <circle cx="12" cy="13" r="1" fill="#06B6D4"/>
-  </svg>
-);
-
-export const LiveTrackingBadge = () => (
-  <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
-    <circle cx="12" cy="12" r="9" fill="#F59E0B" fillOpacity="0.1" stroke="#F59E0B" strokeWidth="1.5"/>
-    <path d="M12 6C9.8 6 8 7.8 8 10c0 3 4 7 4 7s4-4 4-7c0-2.2-1.8-4-4-4z" fill="#F59E0B" fillOpacity="0.3" stroke="#F59E0B" strokeWidth="1.2"/>
-    <circle cx="12" cy="10" r="1.5" fill="#F59E0B"/>
-  </svg>
-);
-
 /* ─── Values & Mission Icons ─── */
 
 export const CommunityHeartIcon = () => (

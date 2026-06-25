@@ -1,8 +1,7 @@
-import React from 'react';
 import { Hero } from '../components/Hero';
 import { PartnerBar } from '../components/PartnerBar';
 import { ProductFeatures } from '../components/ProductFeatures';
-import { ComparisonMatrix } from '../components/WhySanchari';
+import { ComparisonMatrix } from '../components/ComparisonMatrix';
 import { WomenSafety } from '../components/WomenSafety';
 import { HowItWorks } from '../components/HowItWorks';
 import { Faq } from '../components/Faq';
