@@ -13,6 +13,8 @@ import {
 } from './icons/SanchariIcons';
 import { FEATURES } from '../../config/features';
 import { COMPANY } from '../../config/company';
+import { Container } from './layout/Container';
+import { SectionHeading } from './common/SectionHeading';
 
 const iconMap: Record<string, React.ReactNode> = {
   RidePoolingIcon: <RidePoolingIcon />,
@@ -27,37 +29,14 @@ const iconMap: Record<string, React.ReactNode> = {
 export function ProductFeatures() {
   return (
     <section id="features" className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Container>
 
-        {/* Section header */}
-        <div className="max-w-2xl mb-10">
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-sm font-bold text-[#4F46E5] uppercase tracking-widest mb-4"
-          >
-            What we're building
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.05 }}
-            className="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight leading-[1.08] mb-5"
-          >
-            One platform.<br />Every pooling need.
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-lg text-gray-500 leading-relaxed"
-          >
-            {COMPANY.name} is not just a ride-sharing app. It's a unified mobility ecosystem designed for the Indian commuter — with safety, verification, and smart matching at its core.
-          </motion.p>
-        </div>
+        <SectionHeading
+          className="max-w-2xl mb-10"
+          eyebrow="What we're building"
+          title={<>One platform.<br />Every pooling need.</>}
+          subtitle={`${COMPANY.name} is not just a ride-sharing app. It's a unified mobility ecosystem designed for the Indian commuter — with safety, verification, and smart matching at its core.`}
+        />
 
         {/* Core modules — 3 column */}
         <div className="grid md:grid-cols-3 gap-6 mb-10">
@@ -114,7 +93,7 @@ export function ProductFeatures() {
             </motion.div>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

@@ -1,6 +1,7 @@
-import React from 'react';
 import { motion } from 'motion/react';
 import { UserPlus, Fingerprint, Search, Car, PiggyBank } from 'lucide-react';
+import { Container } from './layout/Container';
+import { SectionHeading } from './common/SectionHeading';
 
 const steps = [
   {
@@ -38,42 +39,19 @@ const steps = [
 export function HowItWorks() {
   return (
     <section id="how-it-works" className="py-16 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Container>
 
-        {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-sm font-bold text-[#4F46E5] uppercase tracking-widest mb-4"
-          >
-            How it works
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.05 }}
-            className="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight leading-[1.08] mb-5"
-          >
-            Five steps to a smarter commute.
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-lg text-gray-500 leading-relaxed"
-          >
-            From signup to ride in minutes. Safety-verified from day one.
-          </motion.p>
-        </div>
+        <SectionHeading
+          className="text-center max-w-2xl mx-auto mb-10"
+          eyebrow="How it works"
+          title="Five steps to a smarter commute."
+          subtitle="From signup to ride in minutes. Safety-verified from day one."
+        />
 
         {/* Steps */}
         <div className="relative">
           {/* Connector line (desktop) */}
-          <div className="hidden lg:block absolute top-[3.25rem] left-[calc(10%+2rem)] right-[calc(10%+2rem)] h-px bg-gradient-to-r from-gray-200 via-[#4F46E5]/30 to-gray-200" />
+          <div className="hidden lg:block absolute top-[3.25rem] left-[calc(10%+2rem)] right-[calc(10%+2rem)] h-px bg-gradient-to-r from-gray-200 via-brand/30 to-gray-200" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4">
             {steps.map((step, i) => (
@@ -86,11 +64,11 @@ export function HowItWorks() {
                 className="relative flex flex-col"
               >
                 {/* Step circle */}
-                <div className="relative z-10 w-16 h-16 mx-auto lg:mx-0 bg-white border-2 border-gray-100 rounded-2xl flex items-center justify-center shadow-sm mb-5 group-hover:border-[#4F46E5]/30 transition-colors">
-                  <div className="absolute -top-2.5 -right-2.5 w-6 h-6 rounded-full bg-[#4F46E5] text-white text-[10px] font-black flex items-center justify-center shadow-md">
+                <div className="relative z-10 w-16 h-16 mx-auto lg:mx-0 bg-white border-2 border-gray-100 rounded-2xl flex items-center justify-center shadow-sm mb-5 group-hover:border-brand/30 transition-colors">
+                  <div className="absolute -top-2.5 -right-2.5 w-6 h-6 rounded-full bg-brand text-white text-[10px] font-black flex items-center justify-center shadow-md">
                     {i + 1}
                   </div>
-                  <div className="text-[#4F46E5]">{step.icon}</div>
+                  <div className="text-brand">{step.icon}</div>
                 </div>
 
                 <div className="text-center lg:text-left">
@@ -102,7 +80,7 @@ export function HowItWorks() {
             ))}
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

@@ -5,6 +5,7 @@ import logoDark from '../../assets/sanchari-logo.png';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { COMPANY } from '../../config/company';
 import { NAVIGATION } from '../../config/navigation';
+import { Container } from './layout/Container';
 
 const socialsMap = [
   { key: 'twitter', Icon: Twitter, label: 'Twitter', color: 'hover:text-sky-400 hover:border-sky-400/30 hover:bg-sky-400/10' },
@@ -36,7 +37,7 @@ export function Footer() {
 
       {/* Visual break from Waitlist */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.12] to-transparent" />
-      <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-[#4F46E5]/[0.06] to-transparent pointer-events-none" />
+      <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-brand/[0.06] to-transparent pointer-events-none" />
 
       {/* Grid texture */}
       <div
@@ -47,7 +48,7 @@ export function Footer() {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-6">
+      <Container className="relative z-10 pt-12 pb-6">
 
         {/* Main grid */}
         <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-10 lg:gap-16 pb-10 border-b border-white/[0.07]">
@@ -63,7 +64,7 @@ export function Footer() {
               <p className="text-gray-400 text-sm leading-relaxed max-w-[200px]">
                 {COMPANY.tagline}
               </p>
-              <p className="text-[#4F46E5]/50 text-xs font-semibold mt-1.5">
+              <p className="text-brand/50 text-xs font-semibold mt-1.5">
                 Launch Status: {COMPANY.launch.status}
               </p>
             </div>
@@ -171,7 +172,7 @@ export function Footer() {
             <Link to="/terms" className="text-[11px] text-gray-700 hover:text-gray-400 transition-colors">Terms</Link>
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

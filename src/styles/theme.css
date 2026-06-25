@@ -1,5 +1,12 @@
 @custom-variant dark (&:is(.dark *));
 
+/* Brand palette — exposes `brand`, `brand-dark`, `brand-cyan` color utilities. */
+@theme {
+  --color-brand: #4F46E5;
+  --color-brand-dark: #4338CA;
+  --color-brand-cyan: #06B6D4;
+}
+
 :root {
   --font-size: 16px;
   --background: #ffffff;

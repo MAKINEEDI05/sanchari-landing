@@ -1,34 +1,14 @@
-import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, ShieldCheck, MapPin, Zap, Car } from 'lucide-react';
+import { Container } from './layout/Container';
+import { EASE_OUT_EXPO, floatDuration } from '@/theme';
+import { staggerContainer, staggerItem, floatLoop } from '@/animations/motion';
 
-const container = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.09,
-      delayChildren: 0.05,
-    },
-  },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 28 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } },
-};
-
-const floatA = {
-  animate: { y: [-6, 6, -6] },
-  transition: { repeat: Infinity, duration: 4.5, ease: 'easeInOut' as const },
-};
-const floatB = {
-  animate: { y: [5, -7, 5] },
-  transition: { repeat: Infinity, duration: 5.5, ease: 'easeInOut' as const },
-};
-const floatC = {
-  animate: { y: [-5, 5, -5] },
-  transition: { repeat: Infinity, duration: 3.8, ease: 'easeInOut' as const },
-};
+const heroStats = [
+  { value: '400M+', label: 'Urban commuters in India' },
+  { value: '~60%', label: 'Potential savings vs taxis' },
+  { value: '$21–24B', label: 'Market size (2026)' },
+];
 
 export function Hero() {
   return (
@@ -50,37 +30,37 @@ export function Hero() {
         <div className="absolute top-1/2 left-1/3 w-[300px] h-[300px] bg-gradient-to-br from-violet-100/30 to-transparent rounded-full blur-2xl" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <Container className="w-full">
         <div className="grid lg:grid-cols-[1fr_auto] gap-16 xl:gap-24 items-center">
 
           {/* ─── Left content ─── */}
           <motion.div
-            variants={container}
+            variants={staggerContainer()}
             initial="hidden"
             animate="show"
             className="max-w-2xl"
           >
             {/* Launch badge */}
-            <motion.div variants={item} className="mb-8">
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#4F46E5]/20 bg-indigo-50 text-[#4F46E5] text-sm font-bold">
-                <span className="w-2 h-2 rounded-full bg-[#4F46E5] animate-pulse" />
+            <motion.div variants={staggerItem} className="mb-8">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand/20 bg-indigo-50 text-brand text-sm font-bold">
+                <span className="w-2 h-2 rounded-full bg-brand animate-pulse" />
                 Launching 2026 · Join the Waitlist
               </span>
             </motion.div>
 
             {/* Headline */}
             <motion.h1
-              variants={item}
+              variants={staggerItem}
               className="text-[3.2rem] sm:text-[4rem] xl:text-[5rem] font-black text-gray-900 leading-[1.02] tracking-[-0.03em] mb-6"
             >
               Travel Together.<br />
               Save More.<br />
-              <span className="text-[#4F46E5]">Move Smarter.</span>
+              <span className="text-brand">Move Smarter.</span>
             </motion.h1>
 
             {/* Subheadline */}
             <motion.p
-              variants={item}
+              variants={staggerItem}
               className="text-lg sm:text-xl text-gray-500 leading-relaxed mb-10 max-w-xl"
             >
               Ride Pooling, Parcel Pooling, Trip Pooling, and Women Safety — all in one trusted platform for{' '}
@@ -89,12 +69,12 @@ export function Hero() {
 
             {/* CTAs */}
             <motion.div
-              variants={item}
+              variants={staggerItem}
               className="flex flex-col sm:flex-row gap-4 mb-14"
             >
               <a
                 href="#waitlist"
-                className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#4F46E5] text-white font-bold hover:bg-[#4338CA] active:scale-[0.98] transition-all duration-150 shadow-xl shadow-[#4F46E5]/30"
+                className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-brand text-white font-bold hover:bg-brand-dark active:scale-[0.98] transition-all duration-150 shadow-xl shadow-brand/30"
               >
                 Join Waitlist
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -109,14 +89,10 @@ export function Hero() {
 
             {/* Real stats */}
             <motion.div
-              variants={item}
+              variants={staggerItem}
               className="flex flex-wrap items-center gap-x-10 gap-y-5"
             >
-              {[
-                { value: '400M+', label: 'Urban commuters in India' },
-                { value: '~60%', label: 'Potential savings vs taxis' },
-                { value: '$21–24B', label: 'Market size (2026)' },
-              ].map((s, i) => (
+              {heroStats.map((s, i) => (
                 <div key={i} className="flex flex-col gap-0.5">
                   <span className="text-[1.6rem] font-black text-gray-900 tracking-tight leading-none">
                     {s.value}
@@ -131,11 +107,11 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, x: 48, scale: 0.96 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.9, delay: 0.2, ease: EASE_OUT_EXPO }}
             className="relative hidden lg:flex items-center justify-center"
           >
             {/* Glow ring behind phone */}
-            <div className="absolute w-[360px] h-[360px] rounded-full bg-gradient-to-br from-[#4F46E5]/20 to-[#06B6D4]/10 blur-3xl" />
+            <div className="absolute w-[360px] h-[360px] rounded-full bg-gradient-to-br from-brand/20 to-brand-cyan/10 blur-3xl" />
 
             {/* Phone device */}
             <div className="relative w-[296px] h-[620px] bg-[#111] rounded-[3.2rem] border-4 border-[#222] shadow-2xl shadow-black/30 overflow-hidden z-10">
@@ -155,7 +131,7 @@ export function Hero() {
                 </div>
 
                 {/* App header */}
-                <div className="bg-gradient-to-br from-[#4F46E5] to-[#4338CA] px-5 pb-5 pt-2">
+                <div className="bg-gradient-to-br from-brand to-brand-dark px-5 pb-5 pt-2">
                   <div className="flex items-center justify-between mb-4">
                     <div>
                       <p className="text-indigo-300 text-[10px] font-medium">Good morning</p>
@@ -167,7 +143,7 @@ export function Hero() {
                   </div>
                   {/* Route input */}
                   <div className="bg-white rounded-2xl px-4 py-3 flex items-center gap-3 shadow-lg">
-                    <MapPin className="w-3.5 h-3.5 text-[#4F46E5]" />
+                    <MapPin className="w-3.5 h-3.5 text-brand" />
                     <span className="text-gray-400 text-xs font-medium">Where are you going?</span>
                   </div>
                 </div>
@@ -190,7 +166,7 @@ export function Hero() {
                         <span className="text-[10px] text-gray-400 block truncate">Koramangala → MG Road</span>
                       </div>
                       <div>
-                        <span className="font-black text-[#4F46E5] text-sm">₹85</span>
+                        <span className="font-black text-brand text-sm">₹85</span>
                         <div className="flex items-center gap-0.5 mt-0.5">
                           <ShieldCheck className="w-2.5 h-2.5 text-emerald-500" />
                           <span className="text-[9px] text-emerald-600 font-bold">Verified</span>
@@ -202,7 +178,7 @@ export function Hero() {
                   {/* Ride card 2 */}
                   <div className="bg-white rounded-2xl p-3.5 border border-gray-100 shadow-sm">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#4F46E5] to-[#06B6D4] flex items-center justify-center text-white font-black text-xs">R</div>
+                      <div className="w-9 h-9 rounded-full bg-gradient-to-br from-brand to-brand-cyan flex items-center justify-center text-white font-black text-xs">R</div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-1.5 mb-0.5">
                           <span className="text-xs font-bold text-gray-900">Rahul S.</span>
@@ -214,7 +190,7 @@ export function Hero() {
                         <span className="text-[10px] text-gray-400 block truncate">HSR Layout → Whitefield</span>
                       </div>
                       <div>
-                        <span className="font-black text-[#4F46E5] text-sm">₹120</span>
+                        <span className="font-black text-brand text-sm">₹120</span>
                         <div className="flex items-center gap-0.5 mt-0.5">
                           <ShieldCheck className="w-2.5 h-2.5 text-emerald-500" />
                           <span className="text-[9px] text-emerald-600 font-bold">Verified</span>
@@ -235,7 +211,7 @@ export function Hero() {
 
                 {/* Bottom action */}
                 <div className="px-4 pb-5">
-                  <div className="w-full py-3.5 bg-[#4F46E5] rounded-2xl text-white font-black text-xs text-center shadow-lg shadow-[#4F46E5]/30">
+                  <div className="w-full py-3.5 bg-brand rounded-2xl text-white font-black text-xs text-center shadow-lg shadow-brand/30">
                     Book Ride — ₹85
                   </div>
                 </div>
@@ -244,7 +220,7 @@ export function Hero() {
 
             {/* Floating card: KYC */}
             <motion.div
-              {...floatA}
+              {...floatLoop([-6, 6, -6], floatDuration.a)}
               className="absolute -right-14 top-20 bg-white rounded-2xl shadow-xl shadow-black/10 border border-gray-100 px-4 py-3 flex items-center gap-3 w-52 z-20"
             >
               <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
@@ -258,7 +234,7 @@ export function Hero() {
 
             {/* Floating card: Save */}
             <motion.div
-              {...floatB}
+              {...floatLoop([5, -7, 5], floatDuration.b)}
               className="absolute -left-16 bottom-32 bg-white rounded-2xl shadow-xl shadow-black/10 border border-gray-100 px-4 py-3 flex items-center gap-3 w-48 z-20"
             >
               <div className="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center shrink-0">
@@ -272,7 +248,7 @@ export function Hero() {
 
             {/* Floating card: Women Safe */}
             <motion.div
-              {...floatC}
+              {...floatLoop([-5, 5, -5], floatDuration.c)}
               className="absolute -right-12 bottom-20 bg-gradient-to-br from-pink-600 to-rose-600 rounded-2xl shadow-xl shadow-pink-500/25 px-4 py-3 flex items-center gap-3 z-20"
             >
               <ShieldCheck className="w-5 h-5 text-white shrink-0" />
@@ -284,7 +260,7 @@ export function Hero() {
           </motion.div>
 
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

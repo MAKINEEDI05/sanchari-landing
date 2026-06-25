@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -6,6 +6,7 @@ import logoImg from '../../assets/sanchari-logo.png';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { COMPANY } from '../../config/company';
 import { NAVIGATION } from '../../config/navigation';
+import { Container } from './layout/Container';
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -27,7 +28,7 @@ export function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Container>
         <div className="flex items-center justify-between h-16 lg:h-[68px]">
 
           {/* Logo */}
@@ -72,7 +73,7 @@ export function Navbar() {
           <div className="hidden lg:flex items-center gap-3">
             <a
               href={isHome ? '#waitlist' : '/#waitlist'}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#4F46E5] text-white text-sm font-bold hover:bg-[#4338CA] active:scale-95 transition-all duration-150 shadow-lg shadow-[#4F46E5]/25"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand text-white text-sm font-bold hover:bg-brand-dark active:scale-95 transition-all duration-150 shadow-lg shadow-brand/25"
             >
               Join Waitlist <ArrowRight className="w-3.5 h-3.5" />
             </a>
@@ -87,7 +88,7 @@ export function Navbar() {
             {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
-      </div>
+      </Container>
 
       {/* Mobile menu */}
       <AnimatePresence>
@@ -135,7 +136,7 @@ export function Navbar() {
                 <a
                   href={isHome ? '#waitlist' : '/#waitlist'}
                   onClick={() => setOpen(false)}
-                  className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl bg-[#4F46E5] text-white font-bold hover:bg-[#4338CA] transition-colors"
+                  className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl bg-brand text-white font-bold hover:bg-brand-dark transition-colors"
                 >
                   Join Waitlist <ArrowRight className="w-4 h-4" />
                 </a>
