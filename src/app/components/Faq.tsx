@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Plus, Minus } from 'lucide-react';
 import { COMPANY } from '../../config/company';
@@ -8,7 +8,9 @@ function FaqItem({ q, a, isOpen, onToggle }: { q: string; a: string; isOpen: boo
   return (
     <div className="border border-gray-100 rounded-2xl overflow-hidden bg-white hover:border-gray-200 transition-colors duration-200">
       <button
+        type="button"
         onClick={onToggle}
+        aria-expanded={isOpen}
         className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
       >
         <span className={`font-bold text-sm sm:text-base leading-snug transition-colors duration-150 ${isOpen ? 'text-brand' : 'text-gray-900'}`}>
@@ -44,7 +46,7 @@ export function Faq() {
 
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
-  const faqs = [
+  const faqs = useMemo(() => [
     {
       q: `What is ${COMPANY.name}?`,
       a: `${COMPANY.name} is India's first Safety-First Smart Mobility Ecosystem — combining Ride Pooling, Parcel Pooling, and Trip Pooling on a single platform with the most comprehensive driver verification and women safety infrastructure in Indian carpooling. Unlike Uber or Ola, ${COMPANY.name} enables scheduled, community-driven ride sharing — not on-demand professional drivers.`,
@@ -85,7 +87,7 @@ export function Faq() {
       q: 'Is the app available to download now?',
       a: `Not yet — ${COMPANY.name} is in active development and has not launched publicly on the App Store or Google Play. We're preparing for our initial metro-city launch. Join the waitlist to get early access when we go live, along with founding user benefits.`,
     },
-  ];
+  ], []);
 
   return (
     <section id="faq" className="py-16 bg-gray-50">

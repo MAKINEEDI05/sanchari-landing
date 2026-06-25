@@ -66,7 +66,7 @@ function InvestorForm() {
             <div className="relative">
               <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
               <input name="name" type="text" required value={form.name} onChange={handle}
-                placeholder="Your full name"
+                placeholder="Your full name" aria-label="Full name"
                 className="w-full bg-gray-50 border border-gray-200 rounded-xl py-3.5 pl-11 pr-4 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400/50 focus:border-amber-400 transition-all text-sm" />
             </div>
 
@@ -74,7 +74,7 @@ function InvestorForm() {
             <div className="relative">
               <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
               <input name="org" type="text" required value={form.org} onChange={handle}
-                placeholder="Fund / Organisation name"
+                placeholder="Fund / Organisation name" aria-label="Fund or organisation name"
                 className="w-full bg-gray-50 border border-gray-200 rounded-xl py-3.5 pl-11 pr-4 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400/50 focus:border-amber-400 transition-all text-sm" />
             </div>
 
@@ -82,14 +82,14 @@ function InvestorForm() {
             <div className="relative">
               <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
               <input name="email" type="email" required value={form.email} onChange={handle}
-                placeholder="you@fund.com"
+                placeholder="you@fund.com" aria-label="Email address"
                 className="w-full bg-gray-50 border border-gray-200 rounded-xl py-3.5 pl-11 pr-4 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400/50 focus:border-amber-400 transition-all text-sm" />
             </div>
 
             {/* Investment range */}
             <div className="relative">
               <Briefcase className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none z-10" />
-              <select name="range" required value={form.range} onChange={handle}
+              <select name="range" required value={form.range} onChange={handle} aria-label="Investment range"
                 className="w-full bg-gray-50 border border-gray-200 rounded-xl py-3.5 pl-11 pr-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-amber-400/50 focus:border-amber-400 transition-all text-sm appearance-none cursor-pointer">
                 <option value="" disabled>Investment range</option>
                 {investorRanges.map(r => <option key={r} value={r}>{r}</option>)}
@@ -99,7 +99,7 @@ function InvestorForm() {
 
             {/* Message */}
             <textarea name="message" value={form.message} onChange={handle} rows={3}
-              placeholder="Anything specific you'd like to know? (optional)"
+              placeholder="Anything specific you'd like to know? (optional)" aria-label="Message (optional)"
               className="w-full bg-gray-50 border border-gray-200 rounded-xl py-3.5 px-4 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400/50 focus:border-amber-400 transition-all text-sm resize-none" />
 
             <button type="submit" disabled={loading}

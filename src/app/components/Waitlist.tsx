@@ -9,17 +9,17 @@ const cities = [
   'Delhi / NCR', 'Kolkata', 'Ahmedabad', 'Other',
 ];
 
+const perks = [
+  'Early access before public launch',
+  'Founding user badge in the app',
+  `50% off ${COMPANY.name} Pro for early members`,
+  'Direct line to the founding team',
+];
+
 export function Waitlist() {
   const [form, setForm] = useState({ name: '', email: '', city: '', role: '' });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-
-  const perks = [
-    'Early access before public launch',
-    'Founding user badge in the app',
-    `50% off ${COMPANY.name} Pro for early members`,
-    'Direct line to the founding team',
-  ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
@@ -122,6 +122,7 @@ export function Waitlist() {
                         value={form.name}
                         onChange={handleChange}
                         placeholder="Your full name"
+                        aria-label="Full name"
                         required
                         className="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all text-sm"
                       />
@@ -136,6 +137,7 @@ export function Waitlist() {
                         value={form.email}
                         onChange={handleChange}
                         placeholder="you@example.com"
+                        aria-label="Email address"
                         required
                         className="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all text-sm"
                       />
@@ -148,6 +150,7 @@ export function Waitlist() {
                         name="city"
                         value={form.city}
                         onChange={handleChange}
+                        aria-label="City"
                         required
                         className="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all text-sm appearance-none cursor-pointer"
                         style={{ colorScheme: 'dark' }}
@@ -166,6 +169,7 @@ export function Waitlist() {
                         name="role"
                         value={form.role}
                         onChange={handleChange}
+                        aria-label="I am a..."
                         required
                         className="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all text-sm appearance-none cursor-pointer"
                         style={{ colorScheme: 'dark' }}
