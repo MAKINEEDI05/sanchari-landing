@@ -1,7 +1,6 @@
-import React from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
-import { ArrowLeft, ArrowRight, Calendar, MapPin, Fuel, Clock, Mountain } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Calendar, MapPin, Map, Fuel, Clock, Mountain } from 'lucide-react';
 import {
   TripPoolingIcon,
   UserGroupIcon,

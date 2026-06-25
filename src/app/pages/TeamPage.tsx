@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { ArrowLeft, Linkedin, Github, Twitter, Sparkles } from 'lucide-react';

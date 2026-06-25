@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { CheckCircle2, Clock, Circle, ArrowRight } from 'lucide-react';

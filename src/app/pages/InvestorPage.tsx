@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router';
 import { motion, AnimatePresence } from 'motion/react';
 import {
@@ -11,7 +11,6 @@ import {
   SustainabilityIcon,
   UserGroupIcon,
   SafetyShieldIcon,
-  SmartSavingsIcon,
   BlueOceanIcon,
   AssetLightIcon,
   UnitEconomicsIcon,

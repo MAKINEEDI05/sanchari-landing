@@ -1,7 +1,6 @@
-import React from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
-import { ArrowLeft, ArrowRight, Calendar, MapPin, PiggyBank, Clock } from 'lucide-react';
+import { ArrowLeft, ArrowRight, MapPin, PiggyBank, Clock } from 'lucide-react';
 import {
   RidePoolingIcon,
   SafetyShieldIcon,

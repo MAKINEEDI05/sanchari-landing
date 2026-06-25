@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
@@ -14,7 +13,6 @@ import {
 } from '../components/icons/SanchariIcons';
 import { COMPANY } from '../../config/company';
 import { FEATURES } from '../../config/features';
-import { STATS } from '../../config/stats';
 import { Container } from '../components/layout/Container';
 
 const iconMap: Record<string, React.ReactNode> = {

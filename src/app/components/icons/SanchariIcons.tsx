@@ -1,4 +1,3 @@
-import React from 'react';
 
 /**
  * Premium custom icon library for Sanchari

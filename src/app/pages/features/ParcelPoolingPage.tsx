@@ -1,7 +1,6 @@
-import React from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
-import { ArrowLeft, ArrowRight, Package, Clock, ShieldCheck, MapPin, IndianRupee, Truck, Camera, Star } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Package, Clock, ShieldCheck, MapPin, Truck, Camera } from 'lucide-react';
 import { Container } from '../../components/layout/Container';
 
 const steps = [
