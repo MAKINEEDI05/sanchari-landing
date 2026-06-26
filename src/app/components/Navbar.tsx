@@ -33,7 +33,7 @@ export function Navbar() {
 
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 shrink-0">
-            <ImageWithFallback src={logoImg} alt="" className="h-9 w-9 object-contain" />
+            <ImageWithFallback src={logoImg} alt="" width={36} height={36} className="h-9 w-9 object-contain" />
             <span className="font-black text-[1.1rem] text-gray-900 tracking-[-0.02em]">{COMPANY.name}</span>
           </Link>
 

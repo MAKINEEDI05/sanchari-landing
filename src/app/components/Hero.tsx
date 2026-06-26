@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { ArrowRight, ShieldCheck, MapPin, Zap, Car } from 'lucide-react';
 import { Container } from './layout/Container';
+import { FloatingCard } from './common/FloatingCard';
 import { EASE_OUT_EXPO, floatDuration } from '@/theme';
 import { staggerContainer, staggerItem, floatLoop } from '@/animations/motion';
 
@@ -103,18 +104,22 @@ export function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* ─── Right: Phone mockup ─── */}
+          {/* ─── Right: Phone mockup (decorative illustration) ─── */}
           <motion.div
             initial={{ opacity: 0, x: 48, scale: 0.96 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.2, ease: EASE_OUT_EXPO }}
             className="relative hidden lg:flex items-center justify-center"
+            aria-hidden="true"
           >
             {/* Glow ring behind phone */}
             <div className="absolute w-[360px] h-[360px] rounded-full bg-gradient-to-br from-brand/20 to-brand-cyan/10 blur-3xl" />
 
+            {/* Anchor box: phone + floating cards share one positioning context */}
+            <div className="relative w-[296px] h-[620px]">
+
             {/* Phone device */}
-            <div className="relative w-[296px] h-[620px] bg-[#111] rounded-[3.2rem] border-4 border-[#222] shadow-2xl shadow-black/30 overflow-hidden z-10">
+            <div className="absolute inset-0 bg-[#111] rounded-[3.2rem] border-4 border-[#222] shadow-2xl shadow-black/30 overflow-hidden z-10">
               {/* Dynamic Island */}
               <div className="absolute top-3 left-1/2 -translate-x-1/2 w-28 h-6 bg-[#111] rounded-full z-20" />
 
@@ -219,34 +224,28 @@ export function Hero() {
             </div>
 
             {/* Floating card: KYC */}
-            <motion.div
-              {...floatLoop([-6, 6, -6], floatDuration.a)}
-              className="absolute -right-14 top-20 bg-white rounded-2xl shadow-xl shadow-black/10 border border-gray-100 px-4 py-3 flex items-center gap-3 w-52 z-20"
-            >
-              <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
-                <ShieldCheck className="w-5 h-5 text-emerald-600" />
-              </div>
-              <div>
-                <p className="font-bold text-gray-900 text-sm leading-tight">6-Layer KYC</p>
-                <p className="text-xs text-gray-400">Every driver verified</p>
-              </div>
-            </motion.div>
+            <FloatingCard
+              offsets={[-6, 6, -6]}
+              duration={floatDuration.a}
+              className="-right-14 top-20 w-52"
+              iconBgClassName="bg-emerald-100"
+              icon={<ShieldCheck className="w-5 h-5 text-emerald-600" />}
+              title="6-Layer KYC"
+              subtitle="Every driver verified"
+            />
 
             {/* Floating card: Save */}
-            <motion.div
-              {...floatLoop([5, -7, 5], floatDuration.b)}
-              className="absolute -left-16 bottom-32 bg-white rounded-2xl shadow-xl shadow-black/10 border border-gray-100 px-4 py-3 flex items-center gap-3 w-48 z-20"
-            >
-              <div className="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center shrink-0">
-                <Zap className="w-5 h-5 text-amber-500" />
-              </div>
-              <div>
-                <p className="font-bold text-gray-900 text-sm leading-tight">Save ~60%</p>
-                <p className="text-xs text-gray-400">vs ride-hailing</p>
-              </div>
-            </motion.div>
+            <FloatingCard
+              offsets={[5, -7, 5]}
+              duration={floatDuration.b}
+              className="-left-16 bottom-32 w-48"
+              iconBgClassName="bg-amber-100"
+              icon={<Zap className="w-5 h-5 text-amber-500" />}
+              title="Save ~60%"
+              subtitle="vs ride-hailing"
+            />
 
-            {/* Floating card: Women Safe */}
+            {/* Floating badge: Women Safety */}
             <motion.div
               {...floatLoop([-5, 5, -5], floatDuration.c)}
               className="absolute -right-12 bottom-20 bg-gradient-to-br from-pink-600 to-rose-600 rounded-2xl shadow-xl shadow-pink-500/25 px-4 py-3 flex items-center gap-3 z-20"
@@ -257,6 +256,8 @@ export function Hero() {
                 <p className="text-xs text-pink-200">Mode active</p>
               </div>
             </motion.div>
+
+            </div>
           </motion.div>
 
         </div>

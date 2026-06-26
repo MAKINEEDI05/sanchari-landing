@@ -56,7 +56,7 @@ export function Footer() {
           {/* Brand column */}
           <div className="flex flex-col gap-5">
             <Link to="/" className="inline-flex items-center gap-2 w-fit">
-              <ImageWithFallback src={logoDark} alt="" className="h-10 w-10 object-contain" />
+              <ImageWithFallback src={logoDark} alt="" width={40} height={40} loading="lazy" className="h-10 w-10 object-contain" />
               <span className="font-black text-base text-white tracking-[-0.02em]">{COMPANY.name}</span>
             </Link>
 

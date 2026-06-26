@@ -3,7 +3,6 @@ import { Outlet, useLocation } from 'react-router';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import faviconImg from '../assets/sanchari-favicon.png';
-import { colors } from '@/theme';
 
 export function Root() {
   const { pathname } = useLocation();
@@ -26,11 +25,6 @@ export function Root() {
       className="min-h-screen bg-white"
       style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
     >
-      <style dangerouslySetInnerHTML={{ __html: `
-        html { scroll-behavior: smooth; }
-        * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-        ::selection { background: ${colors.brand}; color: white; }
-      ` }} />
       <Navbar />
       <main>
         <Outlet />

@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import { motion } from 'motion/react';
 import { Container } from './layout/Container';
 
@@ -138,16 +139,8 @@ export function PartnerBar() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
-              className="group flex items-center gap-3 px-4 py-3 rounded-2xl bg-white border transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 cursor-default"
-              style={{
-                borderColor: p.border,
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLDivElement).style.backgroundColor = p.bg;
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLDivElement).style.backgroundColor = 'white';
-              }}
+              className="group flex items-center gap-3 px-4 py-3 rounded-2xl bg-white border transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 hover:bg-[var(--partner-bg)] cursor-default"
+              style={{ borderColor: p.border, ['--partner-bg']: p.bg } as CSSProperties}
             >
               <div className="shrink-0">{p.logo}</div>
               <div>
