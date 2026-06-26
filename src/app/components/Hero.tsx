@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowRight, ShieldCheck, MapPin, Zap, Car } from 'lucide-react';
+import { ArrowRight, ShieldCheck, MapPin, Zap, Car, Play } from 'lucide-react';
 import { Container } from './layout/Container';
 import { FloatingCard } from './common/FloatingCard';
 import { EASE_OUT_EXPO, floatDuration } from '@/theme';
@@ -73,6 +73,7 @@ export function Hero() {
               variants={staggerItem}
               className="flex flex-col sm:flex-row gap-4 mb-14"
             >
+              {/* Primary — conversion */}
               <a
                 href="#waitlist"
                 className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-brand text-white font-bold hover:bg-brand-dark active:scale-[0.98] transition-all duration-150 shadow-xl shadow-brand/30"
@@ -80,11 +81,14 @@ export function Hero() {
                 Join Waitlist
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
+
+              {/* Secondary — discovery */}
               <a
-                href="#waitlist"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-gray-200 bg-white text-gray-700 font-semibold hover:border-gray-300 hover:bg-gray-50 active:scale-[0.98] transition-all duration-150"
+                href="#how-it-works"
+                className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-gray-200 bg-white text-gray-700 font-semibold hover:border-gray-300 hover:bg-gray-50 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200"
               >
-                Get Early Access
+                <Play className="w-4 h-4 text-brand transition-transform group-hover:scale-110" />
+                See How It Works
               </a>
             </motion.div>
 
