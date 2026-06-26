@@ -17,6 +17,23 @@ const perks = [
   'Direct line to the founding team',
 ];
 
+const AppleGlyph = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6" aria-hidden="true">
+    <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.04 2.26-.78 3.59-.74 1.5.04 2.76.69 3.49 1.76-2.95 1.76-2.45 5.56.5 6.78-.71 1.76-1.57 3.32-2.66 4.37zm-3.83-13.6c-.19-1.89 1.35-3.66 3.19-3.86.35 2.11-1.6 3.84-3.19 3.86z" />
+  </svg>
+);
+
+const PlayGlyph = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-[22px] h-[22px]" aria-hidden="true">
+    <path d="M3 20.5v-17c0-.83 1-1.3 1.7-.8l14 8.5c.7.4.7 1.5 0 1.9l-14 8.5c-.7.5-1.7.03-1.7-.1z" />
+  </svg>
+);
+
+const storeBadges = [
+  { name: 'App Store', Glyph: AppleGlyph },
+  { name: 'Google Play', Glyph: PlayGlyph },
+];
+
 export function Waitlist() {
   const [form, setForm] = useState({ name: '', email: '', city: '', role: '' });
   const [submitted, setSubmitted] = useState(false);
@@ -230,19 +247,28 @@ export function Waitlist() {
               </AnimatePresence>
             </div>
 
-            {/* Store badges */}
-            <div className="mt-6 flex items-center justify-center gap-4">
-              <div className="flex items-center gap-2.5 px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-gray-500 text-sm font-semibold">
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.04 2.26-.78 3.59-.74 1.5.04 2.76.69 3.49 1.76-2.95 1.76-2.45 5.56.5 6.78-.71 1.76-1.57 3.32-2.66 4.37zm-3.83-13.6c-.19-1.89 1.35-3.66 3.19-3.86.35 2.11-1.6 3.84-3.19 3.86z"/>
-                </svg>
-                App Store · Coming Soon
-              </div>
-              <div className="flex items-center gap-2.5 px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-gray-500 text-sm font-semibold">
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M3 20.5v-17c0-.83 1-1.3 1.7-.8l14 8.5c.7.4.7 1.5 0 1.9l-14 8.5c-.7.5-1.7.03-1.7-.1z"/>
-                </svg>
-                Google Play · Coming Soon
+            {/* App badges — native apps in development */}
+            <div className="mt-7">
+              <p className="text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-500 mb-3.5">
+                Native apps launching soon
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                {storeBadges.map(({ name, Glyph }) => (
+                  <div
+                    key={name}
+                    className="group flex w-full sm:w-auto items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-2.5 backdrop-blur-sm cursor-default transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.07] hover:shadow-lg hover:shadow-brand/15"
+                  >
+                    <span className="text-white/90 transition-colors duration-300 group-hover:text-white">
+                      <Glyph />
+                    </span>
+                    <span className="text-left leading-tight">
+                      <span className="block text-[10px] font-medium uppercase tracking-wider text-gray-500">
+                        Launching soon
+                      </span>
+                      <span className="block text-sm font-bold text-white">{name}</span>
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
           </motion.div>
