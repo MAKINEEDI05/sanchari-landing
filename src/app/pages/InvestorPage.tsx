@@ -19,6 +19,7 @@ import { BuildStatus } from '../components/BuildStatus';
 import { COMPANY } from '../../config/company';
 import { STATS } from '../../config/stats';
 import { Container } from '../components/layout/Container';
+import { submitContact } from '@/services/contact';
 
 const iconMap: Record<string, React.ReactNode> = {
   SustainabilityIcon: <div className="w-6 h-6"><SustainabilityIcon /></div>,
@@ -42,14 +43,19 @@ function InvestorForm() {
   const [form, setForm] = useState({ name: '', org: '', email: '', range: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handle = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
     setForm(f => ({ ...f, [e.target.name]: e.target.value }));
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError(null);
     setLoading(true);
-    setTimeout(() => { setLoading(false); setSubmitted(true); }, 900);
+    const result = await submitContact({ type: 'investor', ...form });
+    setLoading(false);
+    if (result.ok) setSubmitted(true);
+    else setError(result.error ?? 'Something went wrong. Please try again.');
   };
 
   return (
@@ -108,6 +114,10 @@ function InvestorForm() {
                 ? <span className="w-5 h-5 border-2 border-gray-900/30 border-t-gray-900 rounded-full animate-spin" />
                 : <><DollarSign className="w-4 h-4" /> Request Investor Deck <ArrowRight className="w-4 h-4" /></>}
             </button>
+
+            {error ? (
+              <p role="alert" className="text-rose-500 text-xs text-center">{error}</p>
+            ) : null}
 
             <p className="text-gray-400 text-xs text-center">We respond within 24 hours. No spam.</p>
           </motion.form>

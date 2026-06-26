@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, CheckCircle2, Sparkles, MapPin, Mail, User, Car } from 'lucide-react';
 import { COMPANY } from '../../config/company';
 import { Container } from './layout/Container';
+import { submitContact } from '@/services/contact';
 
 const cities = [
   'Hyderabad', 'Bangalore', 'Pune', 'Mumbai', 'Chennai',
@@ -20,19 +21,20 @@ export function Waitlist() {
   const [form, setForm] = useState({ name: '', email: '', city: '', role: '' });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.name || !form.email || !form.city || !form.role) return;
+    setError(null);
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-    }, 800);
+    const result = await submitContact({ type: 'waitlist', ...form });
+    setLoading(false);
+    if (result.ok) setSubmitted(true);
+    else setError(result.error ?? 'Something went wrong. Please try again.');
   };
 
   return (
@@ -194,6 +196,12 @@ export function Waitlist() {
                         </>
                       )}
                     </button>
+
+                    {error ? (
+                      <p role="alert" className="text-rose-400 text-xs text-center leading-relaxed">
+                        {error}
+                      </p>
+                    ) : null}
 
                     <p className="text-gray-600 text-xs text-center leading-relaxed">
                       No spam. No app store yet. Just early access.

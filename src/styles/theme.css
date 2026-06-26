@@ -197,6 +197,15 @@
     background: var(--color-brand);
     color: #ffffff;
   }
+
+  /* Visible keyboard focus ring for interactive elements that do not define
+     their own focus styles. Components with explicit `focus:*` utilities keep
+     their own treatment (utility layer wins). */
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
 }
 
 /* Respect users who prefer reduced motion: neutralise scroll smoothing and
