@@ -310,11 +310,12 @@ export function InvestorPage() {
           <p className="text-gray-500 text-lg mb-10">
             Request the full DPR v3.0, financial model, and cap table using the form above.
           </p>
-          <a href="#"
-            onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+          <button
+            type="button"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-amber-500 hover:bg-amber-400 text-gray-900 font-black transition-colors shadow-lg shadow-amber-200">
             <DollarSign className="w-5 h-5" /> Request Investor Deck <ArrowRight className="w-4 h-4" />
-          </a>
+          </button>
         </div>
       </section>
     </div>

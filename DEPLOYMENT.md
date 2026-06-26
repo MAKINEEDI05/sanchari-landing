@@ -20,6 +20,25 @@ three places:
 Marketing copy, stats, features, navigation and team data live in the other
 files under `src/config/`.
 
+### Social media links
+
+Social links are **optional**. In `src/config/company.ts`, each entry in
+`social` (`linkedin`, `x`, `instagram`, `facebook`, `youtube`, `github`) is an
+empty string by default. An empty value renders **nothing** — the site never
+shows a placeholder, `#`, or broken social icon. To add an account later, set
+its URL in the config; the icon appears automatically with no UI changes:
+
+```ts
+social: {
+  linkedin: "https://www.linkedin.com/company/sanchari",
+  x: "",            // still empty -> icon hidden
+  instagram: "",
+  facebook: "",
+  youtube: "",
+  github: "",
+}
+```
+
 ---
 
 ## Local Development

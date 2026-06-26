@@ -18,11 +18,19 @@ export interface CompanyFounder {
   title: string;
 }
 
+/**
+ * Social profiles. Leave a value empty ("") when there is no official account —
+ * empty links are never rendered, so the UI never shows a broken or placeholder
+ * icon. Add a real URL here later and the icon appears automatically; no UI
+ * changes are required.
+ */
 export interface CompanySocial {
   linkedin: string;
-  github: string;
+  x: string;
   instagram: string;
-  twitter: string;
+  facebook: string;
+  youtube: string;
+  github: string;
 }
 
 export interface CompanyLaunch {
@@ -61,10 +69,12 @@ export const COMPANY: CompanyConfig = {
     title: "Founder",
   },
   social: {
-    linkedin: "https://linkedin.com/404",
-    github: "https://github.com/404",
-    instagram: "https://instagram.com/404",
-    twitter: "https://twitter.com/404",
+    linkedin: "",
+    x: "",
+    instagram: "",
+    facebook: "",
+    youtube: "",
+    github: "",
   },
   launch: {
     status: "Coming Soon",

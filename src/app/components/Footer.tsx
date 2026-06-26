@@ -1,17 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { Twitter, Linkedin, Instagram, Mail, MapPin, ArrowUpRight } from 'lucide-react';
+import { Twitter, Linkedin, Instagram, Facebook, Youtube, Github, Mail, MapPin, ArrowUpRight } from 'lucide-react';
 import logoDark from '../../assets/sanchari-logo.png';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { COMPANY } from '../../config/company';
 import { NAVIGATION } from '../../config/navigation';
 import { Container } from './layout/Container';
 
-const socialsMap = [
-  { key: 'twitter', Icon: Twitter, label: 'Twitter', color: 'hover:text-sky-400 hover:border-sky-400/30 hover:bg-sky-400/10' },
+const SOCIALS = [
   { key: 'linkedin', Icon: Linkedin, label: 'LinkedIn', color: 'hover:text-blue-400 hover:border-blue-400/30 hover:bg-blue-400/10' },
+  { key: 'x', Icon: Twitter, label: 'X', color: 'hover:text-sky-400 hover:border-sky-400/30 hover:bg-sky-400/10' },
   { key: 'instagram', Icon: Instagram, label: 'Instagram', color: 'hover:text-pink-400 hover:border-pink-400/30 hover:bg-pink-400/10' },
-];
+  { key: 'facebook', Icon: Facebook, label: 'Facebook', color: 'hover:text-blue-500 hover:border-blue-500/30 hover:bg-blue-500/10' },
+  { key: 'youtube', Icon: Youtube, label: 'YouTube', color: 'hover:text-red-500 hover:border-red-500/30 hover:bg-red-500/10' },
+  { key: 'github', Icon: Github, label: 'GitHub', color: 'hover:text-gray-200 hover:border-gray-200/30 hover:bg-gray-200/10' },
+] as const;
 
 function FLink({ name, href }: { name: string; href: string }) {
   const isHash = href.startsWith('/#');
@@ -32,6 +35,8 @@ function ColHeading({ children }: { children: React.ReactNode }) {
 }
 
 export function Footer() {
+  const socialLinks = SOCIALS.filter((s) => COMPANY.social[s.key]);
+
   return (
     <footer id="contact" className="relative overflow-hidden" style={{ backgroundColor: '#080810' }}>
 
@@ -69,22 +74,23 @@ export function Footer() {
               </p>
             </div>
 
-            {/* Social icons */}
-            <div className="flex gap-2">
-              {socialsMap.map(({ key, Icon, label, color }) => {
-                const url = COMPANY.social[key as keyof typeof COMPANY.social];
-                return (
+            {/* Social icons — rendered only for accounts that have a URL */}
+            {socialLinks.length > 0 && (
+              <div className="flex gap-2">
+                {socialLinks.map(({ key, Icon, label, color }) => (
                   <a
-                    key={label}
-                    href={url || '#'}
+                    key={key}
+                    href={COMPANY.social[key]}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={label}
                     className={`w-8 h-8 rounded-lg border border-white/[0.08] bg-white/[0.03] flex items-center justify-center text-gray-500 transition-all duration-200 ${color}`}
                   >
                     <Icon className="w-3.5 h-3.5" />
                   </a>
-                );
-              })}
-            </div>
+                ))}
+              </div>
+            )}
 
             {/* Contact info */}
             <div className="space-y-2 pt-1">

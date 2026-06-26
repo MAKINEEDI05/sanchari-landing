@@ -265,13 +265,13 @@ export function BuildStatus({ variant = 'light' }: BuildStatusProps) {
                 <p className={`text-xs mt-0.5 ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>12–18 month runway · infrastructure only</p>
               </div>
               {isDark ? (
-                <a
-                  href="#"
-                  onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                <button
+                  type="button"
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                   className="shrink-0 inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-gray-900 text-sm font-black transition-colors"
                 >
                   Get deck <ArrowRight className="w-3.5 h-3.5" />
-                </a>
+                </button>
               ) : (
                 <Link
                   to="/investors"
