@@ -23,6 +23,8 @@ export function TeamPage() {
           <img
             src={member.avatar}
             alt={member.name}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover"
           />
         </div>
@@ -87,6 +89,8 @@ export function TeamPage() {
                   <img
                     src={founder.avatar}
                     alt={founder.name}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover"
                   />
                 </div>
