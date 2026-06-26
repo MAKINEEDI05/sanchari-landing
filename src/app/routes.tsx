@@ -42,10 +42,6 @@ export const router = createBrowserRouter([
         lazy: async () => ({ Component: (await import('./pages/features/TripPoolingPage')).TripPoolingPage }),
       },
       {
-        path: 'team',
-        lazy: async () => ({ Component: (await import('./pages/TeamPage')).TeamPage }),
-      },
-      {
         path: '*',
         lazy: async () => ({ Component: (await import('./pages/NotFoundPage')).NotFoundPage }),
       },
