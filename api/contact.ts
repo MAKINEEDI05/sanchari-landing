@@ -69,10 +69,31 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const validationError = validate(body || {});
   if (validationError) return res.status(400).json({ error: validationError });
 
-  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_SECURE, MAIL_FROM, MAIL_TO } = process.env;
+  const {
+    SMTP_HOST,
+    SMTP_PORT,
+    SMTP_USER,
+    SMTP_PASS,
+    SMTP_SECURE,
+    CONTACT_FROM_EMAIL,
+    CONTACT_TO_EMAIL,
+    INVESTORS_FROM_EMAIL,
+    INVESTORS_TO_EMAIL,
+  } = process.env;
 
-  if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS || !MAIL_FROM || !MAIL_TO) {
-    console.error('Mailer is not configured: missing SMTP environment variables.');
+  if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS) {
+    console.error('Mailer is not configured: missing SMTP transport environment variables.');
+    return res.status(500).json({ error: 'Email service is not configured.' });
+  }
+
+  // Each form routes to its own sender/recipient (see DEPLOYMENT.md).
+  const routing =
+    body.type === 'investor'
+      ? { from: INVESTORS_FROM_EMAIL, to: INVESTORS_TO_EMAIL }
+      : { from: CONTACT_FROM_EMAIL, to: CONTACT_TO_EMAIL };
+
+  if (!routing.from || !routing.to) {
+    console.error(`Mailer is not configured: missing routing for "${body.type}" submissions.`);
     return res.status(500).json({ error: 'Email service is not configured.' });
   }
 
@@ -87,8 +108,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const { subject, text } = buildEmail(body);
 
     await transporter.sendMail({
-      from: MAIL_FROM,
-      to: MAIL_TO,
+      from: routing.from,
+      to: routing.to,
       replyTo: body.email,
       subject,
       text,

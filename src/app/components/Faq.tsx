@@ -110,7 +110,7 @@ export function Faq() {
                 Everything you need to know about {COMPANY.name} — the platform, safety, verification, and our launch timeline.
               </p>
               <a
-                href={`mailto:${COMPANY.contact.email}`}
+                href={`mailto:${COMPANY.emails.contact}`}
                 className="inline-flex items-center gap-2 text-sm font-bold text-brand hover:text-brand-dark transition-colors group"
               >
                 Still have questions? Email us

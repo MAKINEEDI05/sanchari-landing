@@ -69,8 +69,15 @@ server by `api/contact.ts`.
 | `SMTP_SECURE` | no | `true` only for port `465`; otherwise `false` (default). |
 | `SMTP_USER` | yes | SMTP username (often the full email address or an SES/API key). |
 | `SMTP_PASS` | yes | SMTP password or app-specific password. |
-| `MAIL_FROM` | yes | "From" address on outgoing mail. Usually must match the SMTP domain. |
-| `MAIL_TO` | yes | Inbox that receives waitlist and investor submissions. |
+| `CONTACT_FROM_EMAIL` | yes | "From" address for the **waitlist** form (`contact@sanchari.me`). |
+| `CONTACT_TO_EMAIL` | yes | Recipient for waitlist submissions (`contact@sanchari.me`). |
+| `INVESTORS_FROM_EMAIL` | yes | "From" address for the **investor** form (`investors@sanchari.me`). |
+| `INVESTORS_TO_EMAIL` | yes | Recipient for investor submissions (`investors@sanchari.me`). |
+| `SUPPORT_EMAIL` | no | Public support address; reserved for a future support form. The address shown on the site comes from `src/config/company.ts`. |
+
+The waitlist form routes through the `CONTACT_*` addresses and the investor
+deck form through the `INVESTORS_*` addresses. SMTP credentials authenticate the
+transport; the from/to addresses are independent of `SMTP_USER`.
 
 A template is provided in [`.env.example`](./.env.example).
 
@@ -80,8 +87,11 @@ SMTP_PORT=587
 SMTP_SECURE=false
 SMTP_USER=
 SMTP_PASS=
-MAIL_FROM=
-MAIL_TO=
+CONTACT_FROM_EMAIL=contact@sanchari.me
+CONTACT_TO_EMAIL=contact@sanchari.me
+INVESTORS_FROM_EMAIL=investors@sanchari.me
+INVESTORS_TO_EMAIL=investors@sanchari.me
+SUPPORT_EMAIL=support@sanchari.me
 ```
 
 ---

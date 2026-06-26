@@ -204,7 +204,7 @@ export function AboutPage() {
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-brand text-white font-bold hover:bg-brand-dark transition-colors shadow-xl shadow-indigo-500/25">
               Join Waitlist <ArrowRight className="w-4 h-4" />
             </Link>
-            <a href={`mailto:${COMPANY.contact.email}`}
+            <a href={`mailto:${COMPANY.emails.contact}`}
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-gray-200 text-gray-700 font-semibold hover:bg-white hover:shadow-sm transition-all">
               Email Us
             </a>

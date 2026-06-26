@@ -107,7 +107,7 @@ export function PrivacyPolicyPage() {
       content: [
         {
           sub: 'Access & Portability',
-          text: `You may request a copy of all personal data we hold about you at any time via the in-app Data Centre or by emailing ${COMPANY.contact.privacyEmail}.`,
+          text: `You may request a copy of all personal data we hold about you at any time via the in-app Data Centre or by emailing ${COMPANY.emails.contact}.`,
         },
         {
           sub: 'Correction',
@@ -128,7 +128,7 @@ export function PrivacyPolicyPage() {
       content: [
         {
           sub: 'Privacy Enquiries',
-          text: `For any privacy-related questions, data requests, or to report a concern, contact us at ${COMPANY.contact.privacyEmail} or write to: ${COMPANY.name}, ${COMPANY.contact.address}.`,
+          text: `For any privacy-related questions, data requests, or to report a concern, contact us at ${COMPANY.emails.contact} or write to: ${COMPANY.name}, ${COMPANY.address}.`,
         },
       ],
     },
@@ -184,7 +184,7 @@ export function PrivacyPolicyPage() {
 
           <div className="mt-16 p-6 bg-indigo-50 border border-indigo-100 rounded-2xl">
             <p className="text-sm font-bold text-brand mb-1">Questions about this policy?</p>
-            <p className="text-sm text-gray-500">Email us at <a href={`mailto:${COMPANY.contact.privacyEmail}`} className="text-brand font-semibold hover:underline">{COMPANY.contact.privacyEmail}</a>. We respond within 5 business days.</p>
+            <p className="text-sm text-gray-500">Email us at <a href={`mailto:${COMPANY.emails.contact}`} className="text-brand font-semibold hover:underline">{COMPANY.emails.contact}</a>. We respond within 5 business days.</p>
           </div>
         </div>
       </section>

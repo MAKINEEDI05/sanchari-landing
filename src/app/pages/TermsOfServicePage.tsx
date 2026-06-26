@@ -31,7 +31,7 @@ export function TermsOfServicePage() {
         },
         {
           sub: 'OTP Authentication',
-          text: `${COMPANY.name} uses mobile OTP for authentication. You are responsible for all activity conducted through your phone number. If you suspect your account has been compromised, contact ${COMPANY.contact.supportEmail} immediately.`,
+          text: `${COMPANY.name} uses mobile OTP for authentication. You are responsible for all activity conducted through your phone number. If you suspect your account has been compromised, contact ${COMPANY.emails.support} immediately.`,
         },
         {
           sub: 'One Account Per User',
@@ -115,7 +115,7 @@ export function TermsOfServicePage() {
         },
         {
           sub: 'Appeal',
-          text: `Suspended users may appeal by contacting ${COMPANY.contact.supportEmail} within 30 days. Appeals are reviewed within 5 business days.`,
+          text: `Suspended users may appeal by contacting ${COMPANY.emails.support} within 30 days. Appeals are reviewed within 5 business days.`,
         },
       ],
     },
@@ -128,7 +128,7 @@ export function TermsOfServicePage() {
         },
         {
           sub: 'Escalation',
-          text: `Unresolved disputes may be escalated to ${COMPANY.name}'s Dispute Resolution Team by emailing ${COMPANY.contact.disputesEmail}. A resolution will be issued within 10 business days.`,
+          text: `Unresolved disputes may be escalated to ${COMPANY.name}'s Dispute Resolution Team by emailing ${COMPANY.emails.contact}. A resolution will be issued within 10 business days.`,
         },
         {
           sub: 'Governing Law',
@@ -145,15 +145,15 @@ export function TermsOfServicePage() {
       content: [
         {
           sub: 'General Support',
-          text: `${COMPANY.contact.supportEmail} — response within 24 hours for standard queries, 15 minutes for active safety incidents.`,
+          text: `${COMPANY.emails.support} — response within 24 hours for standard queries, 15 minutes for active safety incidents.`,
         },
         {
           sub: 'Legal & Compliance',
-          text: `${COMPANY.contact.legalEmail} — for Terms of Service, privacy, and compliance enquiries.`,
+          text: `${COMPANY.emails.contact} — for Terms of Service, privacy, and compliance enquiries.`,
         },
         {
           sub: 'Investor Relations',
-          text: `${COMPANY.contact.investorEmail} — for partnership, funding, and strategic enquiries.`,
+          text: `${COMPANY.emails.investors} — for partnership, funding, and strategic enquiries.`,
         },
       ],
     },
@@ -221,7 +221,7 @@ export function TermsOfServicePage() {
 
           <div className="mt-16 p-6 bg-gray-50 border border-gray-100 rounded-2xl">
             <p className="text-sm font-bold text-gray-700 mb-1">Questions about these terms?</p>
-            <p className="text-sm text-gray-500">Email <a href={`mailto:${COMPANY.contact.legalEmail}`} className="text-brand font-semibold hover:underline">{COMPANY.contact.legalEmail}</a> or visit our <Link to="/privacy" className="text-brand font-semibold hover:underline">Privacy Policy</Link>.</p>
+            <p className="text-sm text-gray-500">Email <a href={`mailto:${COMPANY.emails.contact}`} className="text-brand font-semibold hover:underline">{COMPANY.emails.contact}</a> or visit our <Link to="/privacy" className="text-brand font-semibold hover:underline">Privacy Policy</Link>.</p>
           </div>
         </div>
       </section>
