@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import logoImg from '../../assets/sanchari-logo.png';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { ImageWithFallback } from './common/ImageWithFallback';
 import { COMPANY } from '../../config/company';
 import { NAVIGATION } from '../../config/navigation';
 import { Container } from './layout/Container';
