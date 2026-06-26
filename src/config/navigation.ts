@@ -20,7 +20,6 @@ export const NAVIGATION: NavigationConfig = {
     { name: 'How It Works', href: '/#how-it-works' },
     { name: 'FAQ', href: '/#faq' },
     { name: 'Contact', href: '/#contact' },
-    { name: 'Team', href: '/team' },
     { name: 'Investors', href: '/investors' },
   ],
   footer: {
@@ -31,7 +30,6 @@ export const NAVIGATION: NavigationConfig = {
     ],
     company: [
       { name: 'About Us', href: '/about' },
-      { name: 'Team', href: '/team' },
       { name: 'Investors', href: '/investors' },
     ],
     legal: [
